@@ -1,4 +1,7 @@
 <div id="login-form">
+
+  <img src="/public/images/logo.png" alt="wannago logo">
+
   <h2>Log In</h2>
   <form action="/auth/login" method="POST">
 
@@ -18,12 +21,12 @@
 
     {{!-- <p>New around here?</p>
     <form action="/auth/signup" method="post">
-    <button type="submit">Sign Up</button>
-    </form> --}}
+      <button type="submit">Sign Up</button>
+    </form>
 
 
     {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
+    <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
