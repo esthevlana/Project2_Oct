@@ -1,6 +1,13 @@
-<div id="login-form">
+<h3>Welcome to</h3>
+<h1>WannaGo</h1>
+{{!-- <img> --}}
+<p>Find events in the city and make new friends.</p>
+<button><a href="/auth/login">Login</a></button>
+<button><a href="/auth/signup">Sign Up</a></button>
+
+{{!-- <div id="login-form">
   <h2>Log In</h2>
-  <form action="auth/login" method="POST">
+  <form action="/start{{!-- auth/login --}}" method="POST">
 
     {{!-- <label> Username
       <input type="text" name="username" placeholder="Your username" />
@@ -20,7 +27,7 @@
     <form action="/auth/signup" method="post">
     <button type="submit">Sign Up</button>
     </form>
-
+ --}}
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
