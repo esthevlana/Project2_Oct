@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -10,3 +15,36 @@ a {
 h1 {
   color: 15px;
 }
+
+/*START*/
+
+#start {
+  background-color: #A01FCC;
+}
+
+.start_img {
+  width: 70vw;
+}
+
+.start_login-btn {
+  background-color: #C3D43C;
+  color: black;
+  border-radius: 20%;
+}
+
+.start_signup-btn {
+  background-color: white;
+  color: black;
+  border-radius: 20%;
+
+}
+
+/*LOGIN*/
+
+#login-form {
+  background-color: #EFEFEF;
+}
+
+/*SIGNUP*/
+
+/*INDEX*/

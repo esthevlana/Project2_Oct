@@ -1,36 +1,41 @@
-<h3>Welcome to</h3>
-<h1>WannaGo</h1>
-{{!-- <img> --}}
-<p>Find events in the city and make new friends.</p>
-<button><a href="/auth/login">Login</a></button>
-<button><a href="/auth/signup">Sign Up</a></button>
+<section id="start">
 
-{{!-- <div id="login-form">
-  <h2>Log In</h2>
-  <form action="/start{{!-- auth/login --}}" method="POST">
+  <h3>Welcome to</h3>
+  <h1>WannaGo</h1>
+  <img src="/public/images/start.png" alt="" class="start_img">
 
-    {{!-- <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label> --}}
+  <a class="start_login-btn" href="/auth/login" role="button">Login</a>
+  <a class="start_signup-btn" href="/auth/signup" role="button">Sign up</a>
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
 
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
+  {{!-- <div id="login-form">
+    <h2>Log In</h2>
+    <form action="/start{{!-- auth/login --}}" method="POST">
 
-    <button type="submit">Log In</button>
+      {{!-- <label> Username
+        <input type="text" name="username" placeholder="Your username" />
+      </label> --}}
 
-    <p>New around here?</p>
-    <form action="/auth/signup" method="post">
-    <button type="submit">Sign Up</button>
-    </form>
- --}}
+      <label> Email
+        <input type="email" name="email" placeholder="Your email" />
+      </label>
 
-    {{#if errorMessage}}
+      <label> Password
+        <input type="password" name="password" placeholder="Your password" />
+      </label>
+
+      <button type="submit">Log In</button>
+
+      <p>New around here?</p>
+      <form action="/auth/signup" method="post">
+        <button type="submit">Sign Up</button>
+      </form>
+      --}}
+
+      {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+      {{/if}}
+    </form>
+  </div>
+
+</section>
