@@ -18,12 +18,15 @@ const eventSchema = new Schema(
           required: true,
         },
         imageUrl: String,
-        comments: {
+        comments: [{
             type: Schema.Types.ObjectId, ref: "Comment",
-        },
-        user: {
+        }],
+        creator: {
             type: Schema.Types.ObjectId, ref: "User",
       },
+        confirmed: [{
+        type: Schema.Types.ObjectId, ref: "User",
+  }],
     },
       {
         timestamps: true,

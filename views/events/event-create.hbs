@@ -8,7 +8,7 @@
     <textarea name="description" id="description" cols="30" rows="10" required></textarea>
 
     <label for="price">Price</label>
-    <input type="text" name="title" id="title" required/>
+    <input type="text" name="price" id="price" required/>
 
     <label for="start">Date:</label>
     <input type="date" id="date" name="date" required>
@@ -16,10 +16,13 @@
     <label for="appt">Hour:</label>
     <input type="time" id="time" name="time" required>
 
-    <label for='image'>
+    <label for="appt">Citty:</label>
+    <input type="text" id="city" name="city" required>
+
+   {{!--  <label for='image'>
         Upload your image:
         <input type='file' name='image' class='form-control-file' required/>
-      </label>
+      </label> --}}
 
     <button type="submit">Add the Event</button>
 </form>
