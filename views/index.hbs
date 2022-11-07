@@ -1,4 +1,11 @@
 <h1>Hello, {{username}}</h1>
+{{#each events}} 
+    <div>
+        <img src="{{imageUrl}}">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+    </div>
+    {{/each}}
 <form action='/auth/logout' method='post'>
   <button type='submit'>Logout</button>
 </form>
