@@ -1,0 +1,25 @@
+<h1>Edit your event</h1>
+
+<form action="/event-edit/{{_id}}" method="post">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="{{title}}"/>
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10" value"{{description}}"></textarea>
+
+    <label for="price">Price</label>
+    <input type="text" name="price" id="price" value="{{price}}"/>
+
+    <label for="start">Date:</label>
+    <input type="date" id="date" name="date" value="{{date}}">
+
+    <label for="appt">Hour:</label>
+    <input type="time" id="time" name="time" value="{{hour}}">
+
+    <label for='image'>
+        Upload your image:
+        <input type='file' name='image' class='form-control-file' value="{{imageUrl}}" />
+      </label>
+
+    <button type="submit">Edit Event</button>
+</form>
