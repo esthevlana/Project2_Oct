@@ -10,6 +10,9 @@ const eventSchema = new Schema(
           type: String,
           required: true,
           },
+        date: String,
+        hour: String,
+        price: String,
         city: {
           type: String,
           required: true,
@@ -18,7 +21,7 @@ const eventSchema = new Schema(
         comments: {
             type: Schema.Types.ObjectId, ref: "Comment",
         },
-        users: {
+        user: {
             type: Schema.Types.ObjectId, ref: "User",
       },
     },
