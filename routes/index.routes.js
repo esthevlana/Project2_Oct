@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fileUploader = require('../config/cloudinary.config');
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Event = require('../models/Event.model');
@@ -79,9 +80,9 @@ router.get('/event-edit/:id', async (req, res, next) => {
 router.post("/event-edit/:id", async (req, res, next) => {
         try {
             const {id} = req.params
-            const {title, description, date, hour, price, city} = req.body
+            const {title, description, date, hour, price, city, imageUrl} = req.body
 
-            const updatedEvent = await Event.findByIdAndUpdate(id, {title, description, date, hour, price, city});
+            const updatedEvent = await Event.findByIdAndUpdate(id, {title, description, date, hour, price, city, imageUrl});
 
             res.redirect(`/event-details/${updatedEvent._id}`);
 
