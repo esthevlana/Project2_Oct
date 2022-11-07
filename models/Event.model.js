@@ -10,6 +10,9 @@ const eventSchema = new Schema(
           type: String,
           required: true,
           },
+        date: String,
+        hour: String,
+        price: String,
         city: {
           type: String,
           required: true,
