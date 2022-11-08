@@ -116,7 +116,7 @@ a:link {
 /*LOGIN*/
 
 .login-form {
-  background-color: #EFEFEF;
+  background-color: #ccc;
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -208,7 +208,7 @@ form i:hover {
 /*SIGNUP*/
 
 .signup-form {
-  background-color: #EFEFEF;
+  background-color: #ccc;
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
