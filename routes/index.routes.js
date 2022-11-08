@@ -42,6 +42,20 @@ router.get('/search', async (req, res, next) => {
 } catch (error) {
     console.log(error)
 }
+/* const currentUser = req.session.user
+  const { title } = req.query;
+
+  Event.find({
+    
+       title: title 
+    
+  })
+  .then((results) => {
+    console.log(results)
+    res.render('searchResult', {results, currentUser})
+  })
+.catch(err => next(err)) */
+
     
 })
 
