@@ -11,14 +11,6 @@ body {
   color: black;
 }
 
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-
 /*START*/
 
 #start {
@@ -33,28 +25,20 @@ h1 {
   text-align: center;
 }
 
-#start h1 h3 p {
-  color: black;
+.start_welcome {
+  color: white;
   padding-bottom: 20px;
-}
-
-
-#start h3,
-p {
   font-size: 18px;
   text-align: center;
   padding-bottom: 50px;
 }
 
-#start h1 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 50px;
-  padding-bottom: 30px;
-  font-weight: bolder;
+.start_p {
+  line-height: 30px;
 }
 
-#start p {
-  line-height: 30px;
+.start_logo {
+  width: 50vw;
 }
 
 .start_img {
