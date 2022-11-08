@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&family=Roboto:wght@100&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 20px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -20,31 +22,218 @@ h1 {
 
 #start {
   background-color: #A01FCC;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+#start h1, h3, p {
+  color: white;
+  padding-bottom: 20px;
+}
+
+
+#start h3, p {
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+#start h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 50px;
+  padding-bottom: 30px;
+  font-weight: bolder;
+}
+
+#start p {
+  line-height: 30px;
 }
 
 .start_img {
-  width: 70vw;
+  width: 50vw;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+.startbutton {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .start_login-btn {
   background-color: #C3D43C;
   color: black;
-  border-radius: 20%;
+  border-radius: 13px;
+  font-weight: bolder;
+  margin-right: 20px;
+  font-size: 15px;
+  text-align: center;
+  transition: 0.3s ease background;
+  padding: 15px 50px 15px 50px;
+}
+
+.start_login-btn:hover {
+  background: #fff;
+  color: #C3D43C;
+  transition: 0.3s ease background;
 }
 
 .start_signup-btn {
   background-color: white;
   color: black;
-  border-radius: 20%;
+  border-radius: 13px;
+  font-weight: bolder;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  text-align: center;
+  transition: 0.3s ease background;
+  padding: 15px 50px 15px 50px;
+}
 
+.start_signup-btn:hover {
+  background: #C3D43C;
+  color: #fff;
+  transition: 0.3s ease background;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 /*LOGIN*/
 
-#login-form {
+.login-form {
   background-color: #EFEFEF;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.login-form h1 {
+  color: #A01FCC;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 50px;
+}
+
+.login-form a {
+  text-decoration: none;
+  color: #A01FCC;
+}
+
+.login-form h3 {
+  color: #000;
+  padding-top: 30px;
+  font-size: 25px;
+}
+
+form {
+  margin: 30px auto;
+  width: 80%;
+  text-align: center;
+}
+
+form label {
+  color: black;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+  line-height: 50px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+form input,
+form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+form button {
+  background: #C3D43C;
+  border: 1px solid #C3D43C;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bolder;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+
+form button:hover {
+  background: #fff;
+  color: #C3D43C;
+  transition: 0.3s ease background;
+}
+
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+form i:hover {
+  color: #C3D43C;
 }
 
 /*SIGNUP*/
+
+.signup-form {
+  background-color: #EFEFEF;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.signup-form h1 {
+  color: #A01FCC;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 50px;
+}
+
+.signup-form a {
+  text-decoration: none;
+  color: #A01FCC;
+}
+
+.signup-form h3 {
+  color: #000;
+  padding-top: 30px;
+  font-size: 25px;
+}
 
 /*INDEX*/

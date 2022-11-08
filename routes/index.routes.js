@@ -52,13 +52,20 @@ router.get('/event-details/:id', async (req, res, next) => {
   });
 
 router.get('/event-create', (req, res, next) => res.render ('events/event-create'));
-router.post("/event-create", async (req, res, next) => {
+router.post("/event-create", fileUploader.single('imageUrl'), async (req, res, next) => {
     try {
-      const creator = req.session.currentUser._id;
-      const {title, description, date, hour, price, city} = req.body;
+
+      let imageUrl;
+
+      if (req.file) {
+      imageUrl = req.file.path;
+    } 
+
+/*       const creator = req.session.currentUser._id;
+ */      const {title, description, date, hour, price, city} = req.body;
       console.log(req.body);
     
-    const createdEvent = await Event.create({title, description, date, hour, price, city, creator});
+    const createdEvent = await Event.create({title, description, date, hour, price, city});
 
     res.redirect(`/event-details/${createdEvent._id}`);
 } catch (error) {
@@ -77,11 +84,19 @@ router.get('/event-edit/:id', async (req, res, next) => {
     }
     })
 
-router.post("/event-edit/:id", async (req, res, next) => {
-        try {
-            const {id} = req.params
-            const {title, description, date, hour, price, city, imageUrl} = req.body
+router.post("/event-edit/:id", fileUploader.single('imageUrl'), async (req, res, next) => {
 
+        const {id} = req.params
+        const {title, description, date, hour, price, city, imageUrl} = req.body
+        
+        try {
+
+          let imageUrl;
+
+          if (req.file) {
+            imageUrl = req.file.path;
+          }
+          
             const updatedEvent = await Event.findByIdAndUpdate(id, {title, description, date, hour, price, city, imageUrl});
 
             res.redirect(`/event-details/${updatedEvent._id}`);

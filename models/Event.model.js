@@ -17,7 +17,11 @@ const eventSchema = new Schema(
           type: String,
           required: true,
         },
-        imageUrl: String,
+        imageUrl:
+         {
+          type: String,
+          default: 'https://i.pinimg.com/564x/22/af/61/22af6132a5ff79cb80155291571743dd.jpg'
+         },
         comments: [{
             type: Schema.Types.ObjectId, ref: "Comment",
         }],

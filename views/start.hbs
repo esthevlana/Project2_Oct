@@ -2,19 +2,22 @@
 
   <h3>Welcome to</h3>
   <h1>WannaGo</h1>
-  <img src="/public/images/start.png" alt="" class="start_img">
+  <img src="/images/start.png" alt="" class="start_img">
+  <p>Find events in the city and make new friends.</p>
 
-  <a class="start_login-btn" href="/auth/login" role="button">Login</a>
-  <a class="start_signup-btn" href="/auth/signup" role="button">Sign up</a>
+  <div class="startbutton">
+    <a href="/auth/login" role="button" class="start_login-btn">Login</a>
+    <a href="/auth/signup" role="button" class="start_signup-btn">Sign up</a>
+  </div>
 
 
   {{!-- <div id="login-form">
     <h2>Log In</h2>
-    <form action="/start{{!-- auth/login --}}" method="POST">
+    <form action="/startauth/login" method="POST">
 
-      {{!-- <label> Username
+       <label> Username
         <input type="text" name="username" placeholder="Your username" />
-      </label> --}}
+      </label> 
 
       <label> Email
         <input type="email" name="email" placeholder="Your email" />
@@ -35,7 +38,7 @@
       {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
       {{/if}}
-    </form>
-  </div>
+    {{!-- </form>
+  </div> --}}
 
 </section>

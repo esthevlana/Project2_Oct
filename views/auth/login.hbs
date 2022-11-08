@@ -1,32 +1,40 @@
-<div id="login-form">
-
-  <img src="/public/images/logo.png" alt="wannago logo">
-
-  <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
-
-    {{!-- <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label> --}}
+<div class="login-form">
+  <h1><a href="/start">WannaGo</a></h1>
+  <h3>Login</h3>
+  <form action="/auth/login" method="POST" class="login-form">
 
     <label> Email
       <input type="email" name="email" placeholder="Your email" />
     </label>
 
-    <label> Password
+    <label> Password  
       <input type="password" name="password" placeholder="Your password" />
+      <i class="bi bi-eye-slash" id="togglePassword"></i>
     </label>
-
-    <button type="submit">Log In</button>
-
-    {{!-- <p>New around here?</p>
-    <form action="/auth/signup" method="post">
-      <button type="submit">Sign Up</button>
-    </form>
-
+    <button type="submit">Login</button>
 
     {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
+      <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
+
+<script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            
+            this.classList.toggle("bi-eye");
+        });
+
+        
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>

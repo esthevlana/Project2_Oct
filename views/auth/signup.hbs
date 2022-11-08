@@ -1,5 +1,6 @@
-<div id="form">
-  <h2>Sign Up</h2>
+<div class="signup-form">
+  <h1><a href="/start">WannaGo</a></h1>
+  <h3>Sign Up</h3>
   <form action="/auth/signup" method="POST">
 
     <label> Username
@@ -12,6 +13,10 @@
 
     <label> Password
       <input type="password" name="password" placeholder="Your password" />
+    </label>
+
+    <label> Location
+      <input type="text" name="location" placeholder="Your location" />
     </label>
 
     <button type="submit">Sign Up</button>
