@@ -1,0 +1,44 @@
+<section id="start">
+
+  <h3>Welcome to</h3>
+  <h1>WannaGo</h1>
+  <img src="/images/start.png" alt="" class="start_img">
+  <p>Find events in the city and make new friends.</p>
+
+  <div class="startbutton">
+    <a href="/auth/login" role="button" class="start_login-btn">Login</a>
+    <a href="/auth/signup" role="button" class="start_signup-btn">Sign up</a>
+  </div>
+
+
+  {{!-- <div id="login-form">
+    <h2>Log In</h2>
+    <form action="/startauth/login" method="POST">
+
+       <label> Username
+        <input type="text" name="username" placeholder="Your username" />
+      </label> 
+
+      <label> Email
+        <input type="email" name="email" placeholder="Your email" />
+      </label>
+
+      <label> Password
+        <input type="password" name="password" placeholder="Your password" />
+      </label>
+
+      <button type="submit">Log In</button>
+
+      <p>New around here?</p>
+      <form action="/auth/signup" method="post">
+        <button type="submit">Sign Up</button>
+      </form>
+      --}}
+
+      {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    {{!-- </form>
+  </div> --}}
+
+</section>

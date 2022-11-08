@@ -1,2 +1,16 @@
-<h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<section id="start">
+
+  <h1>Hello, {{user.username}}</h1>
+{{#each events}} 
+    <div>
+        <a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
+        <h3><a href='/event-details/{{_id}}'>{{title}}</a></h3>
+        <p>{{description}}</p>
+        <p>{{creator}}</p>
+    </div>
+    {{/each}}
+<form action='/auth/logout' method='post'>
+  <button type='submit'>Logout</button>
+</form>
+
+</section>

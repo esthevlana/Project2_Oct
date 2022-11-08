@@ -10,6 +10,8 @@ const saltRounds = 10;
 
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
+const Event = require("../models/Event.model");
+const Comment = require("../models/Comment.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
@@ -24,7 +26,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 router.post("/signup", isLoggedOut, (req, res) => {
   const { username, email, password } = req.body;
 
-  // Check that username, email, and password are provided
+  // Check that username, email, and password are provided - it could be !username like the example on the class
   if (username === "" || email === "" || password === "") {
     res.status(400).render("auth/signup", {
       errorMessage:
@@ -55,6 +57,8 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
   */
 
+  // Search the database for a user with the username submitted in the form
+
   // Create a new user - start by hashing the password
   bcrypt
     .genSalt(saltRounds)
@@ -64,7 +68,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      res.redirect("/auth/login");
+      res.redirect("/start"); 
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -142,7 +146,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 });
 
 // GET /auth/logout
-router.get("/logout", isLoggedIn, (req, res) => {
+/* router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -151,6 +155,31 @@ router.get("/logout", isLoggedIn, (req, res) => {
 
     res.redirect("/");
   });
+}); */
+
+/* router.get('/', isLoggedIn, (req, res) => {
+  const user = req.session.user;
+  console.log(user);
+
+  res.render('index', user);
+}); */
+
+router.post('/logout', (req, res, next) => {
+  if (!req.session) res.redirect('/start');
+
+  req.session.destroy((err) => {
+    if (err) next(err);
+    else res.redirect('/start');
+  });
 });
+
+/* router.post('/logout', (req, res, next) => {
+  if (!req.session) res.redirect('/');
+
+  req.session.destroy((err) => {
+    if (err) next(err);
+    else res.redirect('/');
+  });
+}); */
 
 module.exports = router;
