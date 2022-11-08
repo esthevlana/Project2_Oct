@@ -1,6 +1,50 @@
-<section id="start">
+<section id="index">
+  <h1><a href="/">WannaGo</a></h1>
+<div>
+  <form class="searchform" action="action_page.php">
+    <input type="text" placeholder="Search" name="search">
+    <i class="fa fa-search"></i>
+  </form>
+</div>
 
-  <h1>Hello, {{user.username}}</h1>
+  <h3>Hello, {{username}}</h3>
+<div>
+  <h2>Featured Events</h2>
+</div>
+
+<div class="container">  
+  <h2>Select:</h2>
+
+    <div class="dropdown">
+      <button class="dropbtn">Local</button>
+      <div class="dropdown-content">
+        <form class="searchform" action="action_page.php">
+        <input type="text" placeholder="Where?" name="search">
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Data</button>
+      <div class="dropdown-content">
+        <label for="start">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Category</button>
+      <div class="dropdown-content">
+      <a href="#">Outdoor Events</a>
+      <a href="#">Party and Music</a>
+      <a href="#">Speeches and Networking</a>
+      <a href="#">Cultural Events</a>
+      </div>
+    </div>
+
+</div>
+
+<div>
+  <h2>All Events</h2>
 {{#each events}} 
     <div>
         <a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
@@ -9,8 +53,10 @@
         <p>{{creator}}</p>
     </div>
     {{/each}}
+</div>
 <form action='/auth/logout' method='post'>
   <button type='submit'>Logout</button>
 </form>
+
 
 </section>
