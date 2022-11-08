@@ -4,7 +4,8 @@ const fileUploader = require('../config/cloudinary.config');
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Event = require('../models/Event.model');
-const User = require('../models/User.model')
+const User = require('../models/User.model');
+const Comment = require('../models/Comment.model');
 
 /* GET home page */
 
@@ -117,6 +118,21 @@ router.post("/event-delete/:id", async (req, res, next) => {
     } catch (error) {
         console.log(error)
         next(error)
+    }
+})
+
+router.post('/comments/create/:id', async (req, res, next) => {
+    const { id } = req.params;
+    const { comments, author } = req.body;
+    try {
+        const newComment = await Comment.create({ comments, author });
+        const commentUpdate = await Event.findByIdAndUpdate(id, { $push: { comment: newComment._id } })
+        const userUpdate = await User.findByIdAndUpdate(author, { $push: { createdComments: newComment._id } });
+
+        res.redirect(`/event-details/${id}`);
+    } catch (error) {
+        console.log(error);
+        next(error);
     }
 })
 

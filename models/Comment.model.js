@@ -4,10 +4,10 @@ const commentSchema = new Schema(
   {
     content: String,
     author: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-        },
-      },
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    },
+  },
   {
     timestamps: true,
   }
@@ -16,3 +16,4 @@ const commentSchema = new Schema(
 const Comment = model("Comment", commentSchema);
 
 module.exports = Comment;
+
