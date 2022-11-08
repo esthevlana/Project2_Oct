@@ -1,28 +1,28 @@
 <h1>Create a event</h1>
 {{!-- 'action' receive the route created, not a file or anything else --}}
-<form action="/event-create" method="post">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" required/>
+<form action="/event-create" method="post" enctype="multipart/form-data">
+  <label for="title">Title</label>
+  <input type="text" name="title" id="title" required />
 
-    <label for="description">Description</label>
-    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+  <label for="description">Description</label>
+  <textarea name="description" id="description" cols="30" rows="10" required></textarea>
 
-    <label for="price">Price</label>
-    <input type="text" name="price" id="price" required/>
+  <label for="price">Price</label>
+  <input type="text" name="price" id="price" required />
 
-    <label for="start">Date:</label>
-    <input type="date" id="date" name="date" required>
+  <label for="start">Date:</label>
+  <input type="date" id="date" name="date" required>
 
-    <label for="appt">Hour:</label>
-    <input type="time" id="time" name="time" required>
+  <label for="appt">Hour:</label>
+  <input type="time" id="time" name="time" required>
 
-    <label for="appt">Citty:</label>
-    <input type="text" id="city" name="city" required>
+  <label for="appt">Citty:</label>
+  <input type="text" id="city" name="city" required>
 
-   <label for='image'>
-        Upload your image:
-        <input type='file' name='imageUrl' class='form-control-file'/>
-      </label>
+  <label for='image'>
+    Upload your image:
+    <input type='file' name='imageUrl' class='form-control-file' />
+  </label>
 
-    <button type="submit">Add the Event</button>
+  <button type="submit">Add the Event</button>
 </form>

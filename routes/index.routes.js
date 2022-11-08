@@ -63,10 +63,12 @@ router.post("/event-create", fileUploader.single('imageUrl'), async (req, res, n
         }
 
 /*       const creator = req.session.currentUser._id;
- */      const { title, description, date, hour, price, city } = req.body;
+ */     const { title, description, date, hour, price, city } = req.body;
         console.log(req.body);
+        const creator = req.session.currentUser._id;
 
-        const createdEvent = await Event.create({ title, description, date, hour, price, city, imageUrl });
+        const createdEvent = await Event.create({ creator, title, description, date, hour, price, city, imageUrl });
+
 
         res.redirect(`/event-details/${createdEvent._id}`);
     } catch (error) {
@@ -88,7 +90,7 @@ router.get('/event-edit/:id', async (req, res, next) => {
 router.post("/event-edit/:id", fileUploader.single('imageUrl'), async (req, res, next) => {
 
     const { id } = req.params
-    const { title, description, date, hour, price, city, imageUrl } = req.body
+    const { title, description, date, hour, price, city, currentImage } = req.body
 
     try {
 
@@ -96,6 +98,8 @@ router.post("/event-edit/:id", fileUploader.single('imageUrl'), async (req, res,
 
         if (req.file) {
             imageUrl = req.file.path;
+        } else {
+            imageUrl = currentImage;
         }
 
         const updatedEvent = await Event.findByIdAndUpdate(id, { title, description, date, hour, price, city, imageUrl });
@@ -123,10 +127,11 @@ router.post("/event-delete/:id", async (req, res, next) => {
 
 router.post('/comments/create/:id', async (req, res, next) => {
     const { id } = req.params;
-    const { comments, author } = req.body;
+    const { content } = req.body;
+    const author = req.session.currentUser._id;
     try {
-        const newComment = await Comment.create({ comments, author });
-        const commentUpdate = await Event.findByIdAndUpdate(id, { $push: { comment: newComment._id } })
+        const newComment = await Comment.create({ content, author });
+        const commentUpdate = await Event.findByIdAndUpdate(id, { $push: { comments: newComment._id } })
         const userUpdate = await User.findByIdAndUpdate(author, { $push: { createdComments: newComment._id } });
 
         res.redirect(`/event-details/${id}`);

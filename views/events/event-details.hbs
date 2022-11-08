@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
-<hr/>
-<img src="{{imageUrl}}" alt='ahua'/>
+<hr />
+<img src="{{imageUrl}}" alt='ahua' />
 <p>by {{creator}}</p>
 <p>Description: {{description}}</p>
 <p>Date: {{date}}</p>
@@ -12,29 +12,21 @@
     <button type="submit">Delete Event</button>
 </form>
 
-<hr/>
+<hr />
 
 <h4>Leave a comment</h4>
 
-<form action="/comment/create/{{event._id}}" method="post">
+<form action="/comments/create/{{_id}}" method="post">
 
-<select name="author">
-
-    {{#each users}} 
-        <option value="{{_id}}">{{username}}</option> {{!-- nao é necessario indicar user._id por estar dentro do each users --}}
-    {{/each}}
-
-</select>
-
-<label for="content">Comments</label>
-<textarea name="content" id="content" cols="30" rows="10"></textarea>
-<button type="submit">Create a Comment</button>
+    <label for="content">Comments</label>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <button type="submit">Create a Comment</button>
 </form>
 
-<hr/>
+<hr />
 
-{{#each event.comment}}
-    <div>
-        <p><span>{{author.username}}</span>: {{comment}}</p>
-    </div>
+{{#each comments}}
+<div>
+    <p><span>{{author.username}}</span>: {{content}}</p>
+</div>
 {{/each}}
