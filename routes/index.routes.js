@@ -35,14 +35,14 @@ router.get('/search', async (req, res, next) => {
     
     
     console.log(`Events Found: ${foundEvents}`) */
-    const { title } = req.query;
-    const foundEvents = await Event.find({title})
-    console.log(foundEvents)
-    res.render('searchResult', {foundEvents} );
-} catch (error) {
-    console.log(error)
-}
-    
+        const { title } = req.query;
+        const foundEvents = await Event.find({ title })
+        console.log(foundEvents)
+        res.render('searchResult', { foundEvents });
+    } catch (error) {
+        console.log(error)
+    }
+
 })
 
 router.get('/event-details/:id', async (req, res, next) => {

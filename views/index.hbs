@@ -1,26 +1,26 @@
 <section id="index">
   <h1><a href="/">WannaGo</a></h1>
-<div>
-  <form class="searchform" action="/search" method="get">
-    <input type="text" placeholder="Search" name="search">
-    <button type="submit"> <i class="fa fa-search"></i> </button>
-    
-  </form>
-</div>
+  <div>
+    <form class="searchform" action="/search" method="get">
+      <input type="text" placeholder="Search" name="search">
+      <button type="submit"> <i class="fa fa-search"></i> </button>
+
+    </form>
+  </div>
 
   <h3>Hello, {{username}}</h3>
-<div>
-  <h2>Featured Events</h2>
-</div>
+  <div>
+    <h2>Featured Events</h2>
+  </div>
 
-<div class="container">  
-  <h2>Select:</h2>
+  <div class="container">
+    <h2>Select:</h2>
 
     <div class="dropdown">
       <button class="dropbtn">Local</button>
       <div class="dropdown-content">
         <form class="searchform" action="action_page.php">
-        <input type="text" placeholder="Where?" name="search">
+          <input type="text" placeholder="Where?" name="search">
       </div>
     </div>
 
@@ -35,32 +35,32 @@
     <div class="dropdown">
       <button class="dropbtn">Category</button>
       <div class="dropdown-content">
-      <a href="#">Outdoor Events</a>
-      <a href="#">Party and Music</a>
-      <a href="#">Speeches and Networking</a>
-      <a href="#">Cultural Events</a>
+        <a href="#">Outdoor Events</a>
+        <a href="#">Party and Music</a>
+        <a href="#">Speeches and Networking</a>
+        <a href="#">Cultural Events</a>
       </div>
     </div>
 
-</div>
+  </div>
 
-<div>
-  <h2>All Events</h2>
-{{#each events}} 
+  <div>
+    <h2>All Events</h2>
+    {{#each events}}
     <div>
-        <a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
-        <h3><a href='/event-details/{{_id}}'>{{title}}</a></h3>
-        <p>{{description}}</p>
-        <p>{{creator}}</p>
+      <a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
+      <h3><a href='/event-details/{{_id}}'>{{title}}</a></h3>
+      <p>{{description}}</p>
+      <p>{{creator.username}}</p>
     </div>
     {{/each}}
-</div>
+  </div>
 
-{{!-- <form action='/auth/logout' method='post'>
-  <button type='submit'>Logout</button>
-</form> --}}
+  {{!-- <form action='/auth/logout' method='post'>
+    <button type='submit'>Logout</button>
+  </form> --}}
 
-<a href="/auth/logout">Logout</a>
+  <a href="/auth/logout">Logout</a>
 
 
 </section>
