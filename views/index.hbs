@@ -1,9 +1,10 @@
 <section id="index">
   <h1><a href="/">WannaGo</a></h1>
 <div>
-  <form class="searchform" action="action_page.php">
+  <form class="searchform" action="/search" method="get">
     <input type="text" placeholder="Search" name="search">
-    <i class="fa fa-search"></i>
+    <button type="submit"> <i class="fa fa-search"></i> </button>
+    
   </form>
 </div>
 
@@ -54,9 +55,12 @@
     </div>
     {{/each}}
 </div>
-<form action='/auth/logout' method='post'>
+
+{{!-- <form action='/auth/logout' method='post'>
   <button type='submit'>Logout</button>
-</form>
+</form> --}}
+
+<a href="/auth/logout">Logout</a>
 
 
 </section>

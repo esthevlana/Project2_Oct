@@ -164,12 +164,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   res.render('index', user);
 }); */
 
-router.post('/logout', (req, res, next) => {
-  if (!req.session) res.redirect('/start');
-
+router.get('/logout', (req, res, next) => {
+/*   if (!req.session) res.redirect('/start'); */
   req.session.destroy((err) => {
-    if (err) next(err);
-    else res.redirect('/start');
+    if (err){ 
+      next(err)
+    }else {
+      res.redirect('/start');
+    }
   });
 });
 

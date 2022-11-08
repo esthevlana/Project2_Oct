@@ -27,7 +27,22 @@ router.get('/', async (req, res, next) => {
 }); */
 
 router.get('/search', async (req, res, next) => {
-    req.query
+    try {
+        /* const {search} = req.body
+        const events = await Event.find();
+    
+        const foundEvents = events.filter((event) => {event.title.toLowerCase() == search.toLowerCase()})
+    
+    
+    console.log(`Events Found: ${foundEvents}`) */
+    const { title } = req.query;
+    const foundEvents = await Event.find({title})
+    console.log(foundEvents)
+    res.render('searchResult', {foundEvents} );
+} catch (error) {
+    console.log(error)
+}
+    
 })
 
 router.get('/event-details/:id', async (req, res, next) => {
@@ -43,6 +58,7 @@ router.get('/event-details/:id', async (req, res, next) => {
                     model: "User",
                 },
             })
+            .populate('creator')
 
         console.log(event);
         res.render('events/event-details', event);
@@ -51,6 +67,29 @@ router.get('/event-details/:id', async (req, res, next) => {
         next(error);
     }
 });
+
+/* router.get('/event-details/:id', async (req, res, next) => {
+    try {
+        const { id } = req.params;
+
+        const event = await Event.findById(id)
+            .populate('description')
+            .populate({
+                path: "description",
+                populate: {
+                    path: "creator",
+                    model: "User",
+                },
+            })
+
+        console.log(event);
+        res.render('events/event-details', event);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+ */
 
 router.get('/event-create', (req, res, next) => res.render('events/event-create'));
 router.post("/event-create", fileUploader.single('imageUrl'), async (req, res, next) => {
