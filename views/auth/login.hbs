@@ -7,34 +7,14 @@
       <input type="email" name="email" placeholder="Your email" />
     </label>
 
-    <label> Password  
+    <label> Password
       <input type="password" name="password" placeholder="Your password" />
       <i class="bi bi-eye-slash" id="togglePassword"></i>
     </label>
     <button type="submit">Login</button>
 
     {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
+    <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
-
-<script>
-        const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#password");
-
-        togglePassword.addEventListener("click", function () {
-
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-            
-            
-            this.classList.toggle("bi-eye");
-        });
-
-        
-        const form = document.querySelector("form");
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-        });
-    </script>
