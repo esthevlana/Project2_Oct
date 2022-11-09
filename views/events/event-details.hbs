@@ -67,13 +67,14 @@
 
 {{#each comments}}
 <h4>Comments</h4>
-    <span><a href="/views/profile/{{_id}}">{{author.username}}</a></span>: 
+    <span><a href="/auth/profile">{{author.username}}</a></span>: 
     <br/>
 <div class="commentbox">
     {{content}}
 </div>
-<form action="/comment-delete/{{_id}}/{{../_id}}" method="post">
+{{!-- <form action="/comment-delete/{{_id}}/{{../_id}}" method="post">
     <button type="submit">Delete Comment</button>
-</form>
+</form> --}}
+<a href="/comment-delete/{{_id}}/{{../_id}}">Delete Comment</a>
 {{/each}}
 </div>
