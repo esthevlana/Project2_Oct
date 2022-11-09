@@ -28,15 +28,8 @@ router.get('/', async (req, res, next) => {
 
 router.get('/search', async (req, res, next) => {
     try {
-        /* const {search} = req.body
-        const events = await Event.find();
-    
-        const foundEvents = events.filter((event) => {event.title.toLowerCase() == search.toLowerCase()})
-    
-    
-    console.log(`Events Found: ${foundEvents}`) */
     const { title } = req.query;
-    const foundEvents = await Event.find({title})
+    const foundEvents = await Event.find({title : { $regex : new RegExp(title, "i") }})
     console.log(foundEvents)
     res.render('searchResult', {foundEvents} );
 } catch (error) {
@@ -61,6 +54,7 @@ router.get('/search', async (req, res, next) => {
 
 router.get('/event-details/:id', async (req, res, next) => {
     try {
+    
         const { id } = req.params;
 
         const event = await Event.findById(id)
@@ -166,13 +160,20 @@ router.post("/event-edit/:id", fileUploader.single('imageUrl'), async (req, res,
     }
 })
 
-router.post("/event-delete/:id", async (req, res, next) => {
+router.get("/event-delete/:id", async (req, res, next) => {
     try {
 
         const { id } = req.params;
-        const creator = req.session.currentUser._id;
-        await Event.findByIdAndRemove(id)
-        res.redirect("/");
+        const loggedUser = req.session.currentUser._id;
+        const eventToDelete =  await Event.findById(id)
+
+        if(loggedUser === eventToDelete.creator){
+            await Event.findByIdAndRemove(id)
+            res.redirect("/");
+        } else {
+            res.redirect(`/event-details/${id}`);
+        }
+        
 
     } catch (error) {
         console.log(error)
@@ -196,13 +197,18 @@ router.post('/comments/create/:id', async (req, res, next) => {
     }
 });
 
-router.post("/comment-delete/:id", async (req, res, next) => {
+router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
     try {
+        const {id, eventId} = req.params;
+        const loggedUser = req.session.currentUser._id;
+        const eventToDelete =  await Event.findById(id)
 
-        const {id} = req.params;
-        const author = req.session.currentUser._id;
-        await Comment.findByIdAndRemove(id)
-        res.redirect(`/event-details/${id}`);
+        if(loggedUser === eventToDelete.creator){
+            await Event.findByIdAndRemove(id)
+            res.redirect("/");
+        } else {
+            res.redirect(`/event-details/${id}`);
+        }
 
     } catch(error) {
         console.log(error)
