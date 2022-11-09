@@ -14,7 +14,8 @@ router.get('/start', (req, res, next) => res.render('start'));
 router.get('/', async (req, res, next) => {
     try {
         const events = await Event.find();
-        res.render('index', { events });
+        const twoEvents = await Event.find().limit(2)
+        res.render('index', { events, twoEvents });
         console.log(events);
 
     } catch (error) {
@@ -28,33 +29,33 @@ router.get('/', async (req, res, next) => {
 
 router.get('/search', async (req, res, next) => {
     try {
-    const { title } = req.query;
-    const foundEvents = await Event.find({title : { $regex : new RegExp(title, "i") }})
-    console.log(foundEvents)
-    res.render('searchResult', {foundEvents} );
-} catch (error) {
-    console.log(error)
-}
-/* const currentUser = req.session.user
-  const { title } = req.query;
+        const { title } = req.query;
+        const foundEvents = await Event.find({ title: { $regex: new RegExp(title, "i") } })
+        console.log(foundEvents)
+        res.render('searchResult', { foundEvents });
+    } catch (error) {
+        console.log(error)
+    }
+    /* const currentUser = req.session.user
+      const { title } = req.query;
+    
+      Event.find({
+        
+           title: title 
+        
+      })
+      .then((results) => {
+        console.log(results)
+        res.render('searchResult', {results, currentUser})
+      })
+    .catch(err => next(err)) */
 
-  Event.find({
-    
-       title: title 
-    
-  })
-  .then((results) => {
-    console.log(results)
-    res.render('searchResult', {results, currentUser})
-  })
-.catch(err => next(err)) */
 
-    
 })
 
 router.get('/event-details/:id', async (req, res, next) => {
     try {
-    
+
         const { id } = req.params;
 
         const event = await Event.findById(id)
@@ -165,15 +166,15 @@ router.get("/event-delete/:id", async (req, res, next) => {
 
         const { id } = req.params;
         const loggedUser = req.session.currentUser._id;
-        const eventToDelete =  await Event.findById(id)
+        const eventToDelete = await Event.findById(id)
 
-        if(loggedUser === eventToDelete.creator){
+        if (loggedUser === eventToDelete.creator) {
             await Event.findByIdAndRemove(id)
             res.redirect("/");
         } else {
             res.redirect(`/event-details/${id}`);
         }
-        
+
 
     } catch (error) {
         console.log(error)
@@ -199,22 +200,22 @@ router.post('/comments/create/:id', async (req, res, next) => {
 
 router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
     try {
-        const {id, eventId} = req.params;
+        const { id, eventId } = req.params;
         const loggedUser = req.session.currentUser._id;
-        const commentToDelete =  await Comment.findById(id)
+        const commentToDelete = await Comment.findById(id)
 
-        if(loggedUser === commentToDelete.creator){
+        if (loggedUser === commentToDelete.creator) {
             await Comment.findByIdAndRemove(id)
             res.redirect("/");
         } else {
             res.redirect(`/event-details/${eventId}`);
         }
 
-    } catch(error) {
+    } catch (error) {
         console.log(error)
         next(error)
     }
-} )
+})
 
 
 module.exports = router;
