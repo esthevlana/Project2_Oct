@@ -15,16 +15,16 @@ router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
         const loggedUser = req.session.currentUser._id;
         const commentToDelete = await Comment.findById(id)
 
-        if (loggedUser === commentToDelete.creator) {
-        if(loggedUser === commentToDelete.author){
-            await Comment.findByIdAndRemove(id)
+        
+        if(loggedUser == commentToDelete.author){
+            await Comment.findByIdAndDelete(id)
             
-            res.redirect("/");
-        } else {
             res.redirect(`/event-details/${eventId}`);
+        } else {
+            res.redirect(`/`);
         }
 
-    }} catch (error) {
+    } catch (error) {
         console.log(error)
         next(error)
     }
@@ -220,7 +220,7 @@ router.post('/comments/create/:id', async (req, res, next) => {
 });
 
 
-
+/* 
         if (loggedUser == commentToDelete.author) {
             await Comment.findByIdAndDelete(id)
             res.redirect("/");
@@ -233,7 +233,7 @@ router.post('/comments/create/:id', async (req, res, next) => {
         console.log(error)
         next(error)
     }
-})
+}) */
 
 
 module.exports = router;
