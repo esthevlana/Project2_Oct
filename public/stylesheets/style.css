@@ -391,6 +391,7 @@ form.searchform::after {
 }
 
 .event_title {
+<<<<<<< HEAD
   font-size: 2em;
 }
 
@@ -407,4 +408,108 @@ form.searchform::after {
 .logout a {
   color: white;
   font-size: 1em;
+=======
+  font-size: 20px;
+}
+
+/* EVENT DETAILS */
+
+.topicons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: space-around;
+}
+
+.topicons a {
+  color: #A01FCC;
+}
+
+.topicons a:hover {
+  color: #C3D43C;
+}
+
+.divbutton {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	/* align-items: center;
+	align-content: center; */
+}
+
+.confirmbutton {
+  background-color: #C3D43C;
+  color: #000;
+  border-color: #C3D43C;
+  border-radius: 8px;
+  border-style: none;
+  font-weight: bolder;
+  font-size: 0.9em;
+  cursor: pointer;
+  height: 35px;
+  width: 90px;
+}
+
+.confirmbutton:hover {
+  background-color: #fff;
+  color: #C3D43C;
+  border-color: #C3D43C;
+  border-style: solid;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.3s ease background;
+}
+
+.eventinfo {
+  line-height: 25px;
+}
+
+.eventinfo h1 {
+  margin-top: 20px;
+}
+
+.eventinfo hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.eventinfo img {
+  width: 50vw;
+  height: 30vw;
+}
+
+.eventinfo a {
+  font-size: 0.7em;
+  color: #A01FCC;
+}
+
+.eventinfo a:hover {
+  font-size: 0.7em;
+  color: #C3D43C
+}
+
+.creatorlink {
+  font-size: 0.8em;
+}
+
+.creatorlink a {
+  color: #A01FCC;
+  font-size: 0.9em;
+}
+
+.eventicons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.commentbox {
+  border: 1px #C3D43C solid;
+>>>>>>> fc25c1e287451c2490c35de661c60318dad38fd1
 }

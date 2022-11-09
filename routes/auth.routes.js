@@ -138,6 +138,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
+          req.app.locals.userId = user._id
+          // Remove the password field
+          //delete req.app.locals.user.password;
+
           res.redirect("/");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
@@ -164,8 +168,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   res.render('index', user);
 }); */
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', isLoggedIn, (req, res, next) => {
 /*   if (!req.session) res.redirect('/start'); */
+req.app.locals.user = null
   req.session.destroy((err) => {
     if (err){ 
       next(err)
