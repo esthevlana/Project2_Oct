@@ -253,11 +253,13 @@ form.searchform input[type=text] {
   font-size: 17px;
   border: 1px solid grey;
   float: left;
-  width: 80%;
-  background: #f1f1f1;
+  width: 60%;
+  border-radius: 60px;
+  background: #ffffff9e;
+  outline: none;
 }
 
-form.searchform button {
+::placeholder form.searchform button {
   float: left;
   width: 10%;
   padding: 10px;
@@ -383,10 +385,6 @@ form.searchform::after {
 }
 
 .event_container {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-around; */
   margin-bottom: 50px;
 }
 
@@ -394,6 +392,8 @@ form.searchform::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 30vw;
+  margin-bottom: 50px;
 }
 
 .logout {

@@ -211,12 +211,12 @@ router.post('/profile-edit/:id', isLoggedIn, fileUploader.single('imageUser'), a
 }); */
 
 router.get('/logout', isLoggedIn, (req, res, next) => {
-/*   if (!req.session) res.redirect('/start'); */
-req.app.locals.user = null
+  /*   if (!req.session) res.redirect('/start'); */
+  req.app.locals.user = null
   req.session.destroy((err) => {
-    if (err){ 
+    if (err) {
       next(err)
-    }else {
+    } else {
       res.redirect('/start');
     }
   });
