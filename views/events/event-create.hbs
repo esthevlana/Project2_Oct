@@ -1,6 +1,12 @@
-<h1>Create a event</h1>
+<div id="create-event"></div>
+
+<img src="images/logo.png" alt="" class="create-img">
+
+
+
+<h1 class="create-event_h1">Create a event</h1>
 {{!-- 'action' receive the route created, not a file or anything else --}}
-<form action="/event-create" method="post" enctype="multipart/form-data">
+<form class="create_title" action="/event-create" method="post" enctype="multipart/form-data">
   <label for="title">Title</label>
   <input type="text" name="title" id="title" required />
 
@@ -26,3 +32,5 @@
 
   <button type="submit">Add the Event</button>
 </form>
+
+</div>

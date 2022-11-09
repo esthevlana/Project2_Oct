@@ -244,31 +244,45 @@ form i:hover {
 }
 
 .index_h2 {
-  font-size: 20px;
+  font-size: 1.8em;
   color: #423839;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.searchform {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 form.searchform input[type=text] {
   padding: 10px;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.352);
   float: left;
-  width: 60%;
+  width: 50%;
   border-radius: 60px;
   background: #ffffff9e;
   outline: none;
+  position: relative;
 }
 
-::placeholder form.searchform button {
-  float: left;
-  width: 10%;
+::placeholder {
+  padding-left: 50px;
+  color: rgba(128, 128, 128, 0.797);
+}
+
+form.searchform button {
+  width: 50px;
   padding: 10px;
-  background: #C3D43C;
+  background: rgba(128, 128, 128, 0.226);
+  border: none;
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
+  border-radius: 50%;
   border-left: none;
   cursor: pointer;
+  position: absolute;
 }
 
 form.searchform button:hover {
@@ -408,4 +422,31 @@ form.searchform::after {
 .logout a {
   color: white;
   font-size: 1em;
+}
+
+.logout:hover {
+  background-color: #CB236D;
+}
+
+/*CREATE EVENT*/
+
+#create-event {
+  background-color: #EFEFEF;
+}
+
+.create_title {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #423839;
+  width: 60vw;
+}
+
+.create_title input {
+  border-radius: 14px;
+}
+
+.create-event_h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  color: #423839;
+  text-align: center;
 }
