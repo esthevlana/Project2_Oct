@@ -379,19 +379,15 @@ form.searchform::after {
 
 .event-index_img {
   width: 30vw;
+
 }
 
 .event_container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-  align-content: center;
-}
-
-.event_title {
-  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 .logout {
