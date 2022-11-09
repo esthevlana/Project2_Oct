@@ -392,7 +392,6 @@ form.searchform::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 30vw;
   margin-bottom: 50px;
 }
 
