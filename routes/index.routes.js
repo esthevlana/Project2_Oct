@@ -9,6 +9,27 @@ const Comment = require('../models/Comment.model');
 
 /* GET home page */
 
+router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
+    try {
+        const { id, eventId } = req.params;
+        const loggedUser = req.session.currentUser._id;
+        const commentToDelete = await Comment.findById(id)
+
+        if (loggedUser === commentToDelete.creator) {
+        if(loggedUser === commentToDelete.author){
+            await Comment.findByIdAndRemove(id)
+            
+            res.redirect("/");
+        } else {
+            res.redirect(`/event-details/${eventId}`);
+        }
+
+    }} catch (error) {
+        console.log(error)
+        next(error)
+    }
+})
+
 router.get('/start', (req, res, next) => res.render('start'));
 
 router.get('/', async (req, res, next) => {
@@ -198,11 +219,6 @@ router.post('/comments/create/:id', async (req, res, next) => {
     }
 });
 
-router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
-    try {
-        const { id, eventId } = req.params;
-        const loggedUser = req.session.currentUser._id;
-        const commentToDelete = await Comment.findById(id)
 
 
         if (loggedUser == commentToDelete.author) {
