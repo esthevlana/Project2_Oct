@@ -204,7 +204,11 @@ router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
         const loggedUser = req.session.currentUser._id;
         const commentToDelete = await Comment.findById(id)
 
+<<<<<<< HEAD
         if (loggedUser === commentToDelete.creator) {
+=======
+        if(loggedUser === commentToDelete.author){
+>>>>>>> be68d72a2ef1b1858f441225e39d56d795200f81
             await Comment.findByIdAndRemove(id)
             res.redirect("/");
         } else {
