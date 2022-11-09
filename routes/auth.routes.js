@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const fileUploader = require('../config/cloudinary.config');
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
@@ -68,7 +69,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      res.redirect("/");
+      res.redirect("/auth/login");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -147,6 +148,47 @@ router.post("/login", isLoggedOut, (req, res, next) => {
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
     .catch((err) => next(err));
+});
+
+router.get('/profile', isLoggedIn, (req, res) => {
+  const user = req.session.user;
+  console.log(user);
+  res.render('auth/profile', user);
+});
+
+
+
+router.get("/profile-edit/:id", async (req, res, next) => {
+  try {
+    const updateUser= await User.findById(req.params.id);
+    res.render("user/profile-edit", updateUser);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.post('/profile-edit/:id', isLoggedIn, fileUploader.single('imageUser'), async (req, res, next) => {
+  try {
+  const {id} = req.params;
+  const { username, about, imageUser} = req.body;
+  const updatedProfile = await User.findByIdAndUpdate(id, {
+    username,
+    imageUser,
+  });
+    
+  if(req.file) {
+    User.findByIdAndUpdate( id, {username, about, imageUser: req.file.path}, {new: true})
+    res.redirect(`/auth/profile/${updatedProfile._id}`)};
+   
+   if(!req.file) {
+    User.findByIdAndUpdate( id, {username, about, imageUser: req.file.path}, {new: true})
+    res.redirect(`/auth/profile/${updatedProfile._id}`)}; 
+
+} catch (error) {
+  console.log(error);
+  next(error);
+}
 });
 
 // GET /auth/logout
