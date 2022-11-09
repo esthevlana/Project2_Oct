@@ -230,6 +230,15 @@ form i:hover {
   background-color: #f0f3f6;
 }
 
+.index_header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+}
+
 .index_logo {
   width: 200px;
 }
@@ -290,6 +299,7 @@ form.searchform::after {
 .dropbtn_city {
   background-color: #CB236D;
   color: white;
+  font-weight: bold;
   padding: 16px 60px;
   margin: 10px 20px;
   font-size: 16px;
@@ -298,9 +308,14 @@ form.searchform::after {
   cursor: pointer;
 }
 
+.dropbtn_city:hover {
+  background-color: rgb(255, 68, 149);
+}
+
 .dropbtn_date {
   background-color: #3C6ED8;
   color: white;
+  font-weight: bold;
   padding: 16px 56px;
   margin: 10px 20px;
   font-size: 16px;
@@ -309,15 +324,24 @@ form.searchform::after {
   cursor: pointer;
 }
 
+.dropbtn_date:hover {
+  background-color: #4981f9;
+}
+
 .dropbtn_category {
   background-color: #C3D43C;
   color: white;
+  font-weight: bold;
   padding: 16px 40px;
   margin: 10px 20px;
   font-size: 16px;
   border-radius: 15px;
   border: none;
   cursor: pointer;
+}
+
+.dropbtn_category:hover {
+  background-color: #d6ea3e;
 }
 
 .dropdown {
@@ -367,5 +391,20 @@ form.searchform::after {
 }
 
 .event_title {
-  font-size: 20px;
+  font-size: 2em;
+}
+
+.logout {
+  background-color: #A01FCC;
+  border-radius: 20px;
+  padding: 10px 30px;
+  margin: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.logout a {
+  color: white;
+  font-size: 1em;
 }

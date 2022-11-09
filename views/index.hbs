@@ -1,6 +1,10 @@
 <section id="index">
   {{!-- <h1><a href="/">WannaGo</a></h1> --}}
-  <img src="/images/logo.png" alt="" class="index_logo">
+
+  <div class="index_header">
+    <img src="/images/logo.png" alt="wannago logo" class="index_logo">
+    <button type="submit" class="logout"><a href="/auth/logout">Logout</a></button>
+  </div>
 
   </div>
   <form class="searchform" action="/search" method="get">
@@ -61,9 +65,9 @@
     <div class="event_container">
 
       <a href='/event-details/{{_id}}'><img src="{{imageUrl}}" class="event-index_img"></a>
-      <h3 class="event_title"><a href='/event-details/{{_id}}'>{{title}}</a></h3>
+      {{!-- <h3><a href='/event-details/{{_id}}' class="event_title">{{title}}</a></h3>
       <p>{{description}}</p>
-      <p>{{creator.username}}</p>
+      <p>{{creator.username}}</p> --}}
 
     </div>
     {{!-- {{> indexpartial this}} --}}
@@ -73,8 +77,5 @@
   {{!-- <form action='/auth/logout' method='post'>
     <button type='submit'>Logout</button>
   </form> --}}
-
-  <a href="/auth/logout" class="logout">Logout</a>
-
 
 </section>
