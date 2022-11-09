@@ -144,6 +144,7 @@ router.post("/event-edit/:id", fileUploader.single('imageUrl'), async (req, res,
 
     const { id } = req.params
     const { title, description, date, hour, price, city, currentImage } = req.body
+    const creator = req.session.currentUser._id;
 
     try {
 
@@ -169,6 +170,7 @@ router.post("/event-delete/:id", async (req, res, next) => {
     try {
 
         const { id } = req.params;
+        const creator = req.session.currentUser._id;
         await Event.findByIdAndRemove(id)
         res.redirect("/");
 
@@ -192,8 +194,21 @@ router.post('/comments/create/:id', async (req, res, next) => {
         console.log(error);
         next(error);
     }
-})
+});
 
+router.post("/comment-delete/:id", async (req, res, next) => {
+    try {
+
+        const {id} = req.params;
+        const author = req.session.currentUser._id;
+        await Comment.findByIdAndRemove(id)
+        res.redirect(`/event-details/${id}`);
+
+    } catch(error) {
+        console.log(error)
+        next(error)
+    }
+} )
 
 
 module.exports = router;

@@ -164,7 +164,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   res.render('index', user);
 }); */
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', isLoggedIn, (req, res, next) => {
 /*   if (!req.session) res.redirect('/start'); */
   req.session.destroy((err) => {
     if (err){ 
