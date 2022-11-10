@@ -30,7 +30,7 @@ router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
     }
 })
 
-router.get('/start', (req, res, next) => res.render('start'));
+router.get('/start', (req, res, next) => res.render('start', {layout: false}));
 
 router.get('/', async (req, res, next) => {
     try {
@@ -124,7 +124,7 @@ router.get('/event-details/:id', async (req, res, next) => {
  */
 
 router.get('/event-create', (req, res, next) => res.render('events/event-create'));
-router.post("/event-create", fileUploader.single('imageUrl'), async (req, res, next) => {
+router.post('/event-create', fileUploader.single('imageUrl'), async (req, res, next) => {
     try {
 
         let imageUrl;
@@ -158,7 +158,7 @@ router.get('/event-edit/:id', async (req, res, next) => {
     }
 })
 
-router.post("/event-edit/:id", fileUploader.single('imageUrl'), async (req, res, next) => {
+router.post("/event-edit/:id", isLoggedIn, fileUploader.single('imageUrl'), async (req, res, next) => {
 
     const { id } = req.params
     const { title, description, date, hour, price, city, currentImage } = req.body
@@ -212,6 +212,20 @@ router.get('/event-confirm/:id', isLoggedIn, async(req, res, next) => {
 
         await User.findByIdAndUpdate(userId, {$push: {confirmedEvents: id}})
         await Event.findByIdAndUpdate(id, {$push: {confirmed: userId}})
+
+        res.redirect('/auth/profile')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+router.get('/favourite-event/:id', isLoggedIn, async(req, res, next) => {
+    try {
+        const {id} = req.params
+        const userId = req.session.currentUser._id
+
+        await User.findByIdAndUpdate(userId, {$push: {favouriteEvents: id}})
+        await Event.findByIdAndUpdate(id, {$push: {allFavourites: userId}})
 
         res.redirect('/auth/profile')
     } catch (error) {

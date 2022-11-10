@@ -2,6 +2,13 @@
 
 <a href="/auth/logout">Logout</a>
 
+{{#each confirmedEvents}}
+<p>{{title}}</p>
+{{/each}}
+{{#each favouriteEvents}}
+<p>{{title}}</p>
+{{/each}}
+
 
 <img src="{{imageUser}}" alt="photo">
 <div class='profile-photo'>
@@ -20,3 +27,4 @@
 <form action='/profile-edit' method='post'>
   <button type='submit'>Edit profile</button>
 </form>
+

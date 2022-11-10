@@ -20,7 +20,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
-  res.render("auth/signup");
+  res.render("auth/signup", {layout: false});
 });
 
 // POST /auth/signup
@@ -153,8 +153,11 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 router.get('/profile', isLoggedIn, async(req, res) => {
   try {
     const userId = req.session.currentUser._id;
-    const user = await User.findById(userId).populate("confirmedEvents")
+    const user = await User.findById(userId)
+    .populate("favouriteEvents")
+    .populate("confirmedEvents")
     res.render('auth/profile', user);
+    console.log(user)
   } catch (error) {
     console.log(error)
   }
