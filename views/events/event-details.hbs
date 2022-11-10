@@ -107,18 +107,18 @@
 
         <hr />
 
-        {{#each comments}}
         <h4 class="details_h4">Comments</h4>
-
+        {{#each comments}}
         <div class="user-comment"> <span><a href="/auth/profile">{{author.username}}</a></span>:</div>
         <br />
         <div class="commentbox">
             {{content}}
         </div>
 
-        {{!-- <form action="/comment-delete/{{_id}}/{{../_id}}" method="post"> --}}
-            <button action="/comment-delete/{{_id}}/{{../_id}}" method="post" type="submit"
-                class="delete-comment_btn">Delete Comment</button>
+        {{!--  --}}
+        <form action="/comment-delete/{{_id}}/{{../_id}}" method="post" class="deletecommentform">
+            <button type="submit" class="delete-comment_btn">Delete Comment</button>
+        </form>
 
             {{/each}}
     </div>

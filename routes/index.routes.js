@@ -21,7 +21,7 @@ router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
 
             res.redirect(`/event-details/${eventId}`);
         } else {
-            res.redirect(`/`);
+            res.redirect('/');
         }
 
     } catch (error) {
