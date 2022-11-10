@@ -287,7 +287,7 @@ form.searchform input[type=text] {
   font-size: 17px;
   border: 1px solid rgba(128, 128, 128, 0.352);
   float: left;
-  width: 85%;
+  width: 100%;
   border-radius: 60px;
   background: #ffffff9e;
   outline: none;
@@ -930,6 +930,36 @@ form.searchform::after {
 
 /* SEARCH RESULT PAGE */
 
+#search-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #A01FCC;
+  padding: 20px;
+}
+
 .imgsearchresult {
-  width: 20vw;
+  width: 50vw;
+}
+
+.result_h1 {
+  font-size: 2em;
+  color: #dbef42;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.search-result_img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5px 5px;
+}
+
+.result {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
