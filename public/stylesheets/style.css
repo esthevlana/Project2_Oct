@@ -428,6 +428,162 @@ form.searchform::after {
   background-color: #CB236D;
 }
 
+/* EVENT DETAILS */
+
+.eventdetailspage {
+  background-color: #efefef;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topicons {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: center;
+}
+
+.topicons a {
+  color: #A01FCC;
+}
+
+.topicons a:hover {
+  color: #C3D43C;
+}
+
+.eventconfirm button {
+  background-color: #d6ea3e;
+  border-color: #d6ea3e;
+  border-style: none;
+  width: 6em;
+  height: 2em;
+  color: #000;
+  font-weight: bolder;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.eventconfirm button:hover {
+  background-color: #fff;
+  border: 1px solid #d6ea3e;
+  width: 6em;
+  height: 2em;
+  color: #000;
+  font-weight: bolder;
+  font-size: 1.5em;
+  color:#d6ea3e;
+  cursor: pointer;
+}
+
+.eventinfoheader h1 {
+  font-size: 4em;
+  margin-top: 1em;
+}
+
+.editdeletebutton {
+  background-color: #a6a6a6;
+  font-weight: bold;
+  border: #a6a6a6;
+  width: 8em;
+  height: 2em;
+}
+
+.editdeletebutton a {
+  color: #fff;
+}
+
+.editdeletebutton:hover {
+  background-color: #737373;
+  border: 1px solid #737373;
+}
+
+.editdeletebutton a:hover {
+  color: #fff;
+}
+
+.eventinfo hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.eventimage {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  margin-top: 7em;
+}
+
+.eventicons {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+  font-size: 3em;
+}
+
+.eventicons p {
+  font-size: 0.6em;
+}
+
+.eventdescription p {
+  font-size: 2em;
+  margin-top: 30px;
+  width: 50em;
+}
+
+.creatorlink {
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+
+.creatorlink a {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.eventinfo h2 {
+  font-size: 2em;
+}
+
+.eventform {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.eventform button {
+  width: 10em;
+  margin-top: 1em;
+}
+
+.commentbox {
+  font-size: 1.5em;
+}
+
+.allcomments h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.allcomments button {
+  width: 9em;
+  font-size: 1em;
+}
+
+.username a {
+  font-size: 1.5em;
+}
+
 /*CREATE EVENT*/
 
 #create-event {
