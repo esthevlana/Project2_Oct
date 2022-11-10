@@ -714,9 +714,19 @@ form.searchform::after {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: stretch;
+}
+
+.confirmedevents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+
 }
 
 .confirmedevents h3 {
@@ -724,7 +734,7 @@ form.searchform::after {
   font-size: 1.2em;
 }
 
-.confirmedevents p {
+.confirmedevents a {
   color: #fff;
 }
 
@@ -732,6 +742,10 @@ form.searchform::after {
   color: #fff;
   margin-top: 20px;
   font-size: 1.2em;
+}
+
+.eventslist {
+  margin-right: 8px;
 }
 
 .footermenu {
