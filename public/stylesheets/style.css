@@ -9,7 +9,7 @@
 }
 
 body {
-  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
 
@@ -20,34 +20,45 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
+  /*   justify-content: space-evenly; */
   align-items: center;
   align-content: center;
   padding: 30px;
   text-align: center;
+  height: 100vh;
 }
 
 .start_welcome {
   color: white;
-  padding-bottom: 20px;
-  font-size: 18px;
+  font-size: 2.5em;
   text-align: center;
-  padding-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .start_p {
   line-height: 30px;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-bottom: 40px;
+
 }
 
 .start_logo {
-  width: 50vw;
+  width: 60vw;
 }
 
 .start_img {
-  width: 50vw;
-  padding-bottom: 50px;
-  padding-top: 20px;
+  width: 35vw;
 }
+
+/* #start_img_btn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+} */
 
 .startbutton {
   display: flex;
@@ -58,6 +69,8 @@ body {
   align-content: center;
   cursor: pointer;
   display: inline-block;
+  position: absolute;
+  padding-left: 500px;
 }
 
 .start_login-btn {
@@ -103,8 +116,9 @@ a:link {
 
 /*LOGIN*/
 
+
 .login-form {
-  background-color: #ccc;
+  background-color: #EFEFEF;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -113,29 +127,19 @@ a:link {
   align-content: center;
   text-align: center;
   padding: 50px;
-}
-
-.login-form h1 {
-  color: #A01FCC;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 50px;
-}
-
-.login-form a {
-  text-decoration: none;
-  color: #A01FCC;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .login-form h3 {
-  color: #000;
+  color: #423839;
   padding-top: 30px;
   font-size: 25px;
 }
 
 form {
   margin: 30px auto;
-  width: 80%;
   text-align: center;
+  width: 60vw;
 }
 
 form label {
@@ -175,7 +179,7 @@ form button {
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.3s ease background;
-  width: 100%;
+  width: 25vw;
 }
 
 form button:hover {
@@ -196,7 +200,7 @@ form i:hover {
 /*SIGNUP*/
 
 .signup-form {
-  background-color: #ccc;
+  background-color: #EFEFEF;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -205,21 +209,11 @@ form i:hover {
   align-content: center;
   text-align: center;
   padding: 50px;
-}
-
-.signup-form h1 {
-  color: #A01FCC;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 50px;
-}
-
-.signup-form a {
-  text-decoration: none;
-  color: #A01FCC;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .signup-form h3 {
-  color: #000;
+  color: #423839;
   padding-top: 30px;
   font-size: 25px;
 }
@@ -267,7 +261,7 @@ form.searchform input[type=text] {
   position: relative;
 }
 
-::placeholder {
+.search::placeholder {
   padding-left: 50px;
   color: rgba(128, 128, 128, 0.797);
 }
@@ -328,6 +322,14 @@ form.searchform::after {
   background-color: rgb(255, 68, 149);
 }
 
+#index_city {
+  width: 160px;
+}
+
+#index_city::placeholder {
+  font-size: 0.8em;
+}
+
 .dropbtn_date {
   background-color: #3C6ED8;
   color: white;
@@ -368,10 +370,13 @@ form.searchform::after {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #EFEFEF;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 .dropdown-content a {
@@ -381,8 +386,13 @@ form.searchform::after {
   display: block;
 }
 
+#startdate {
+  width: 130px;
+  height: 25px;
+}
+
 .dropdown-content a:hover {
-  background-color: #f1f1f1
+  background-color: #d6ea3e
 }
 
 .dropdown:hover .dropdown-content {
@@ -392,6 +402,8 @@ form.searchform::after {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+/*INDEX EVENT IMAGES*/
 
 .event-index_img {
   width: 30vw;
@@ -408,6 +420,8 @@ form.searchform::after {
   justify-content: space-around;
   margin-bottom: 50px;
 }
+
+/*LOGOUT*/
 
 .logout {
   background-color: #A01FCC;
@@ -428,16 +442,26 @@ form.searchform::after {
   background-color: #CB236D;
 }
 
+/* EVENT-DETAIL */
+
+.event-details {
+  background-color: #ccc;
+}
+
 /*CREATE EVENT*/
 
 #create-event {
   background-color: #EFEFEF;
 }
 
+.create-img {
+  width: 200px;
+}
+
 .create_title {
   font-family: Arial, Helvetica, sans-serif;
   color: #423839;
-  width: 60vw;
+  width: 50vw;
 }
 
 .create_title input {
