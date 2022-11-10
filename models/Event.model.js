@@ -33,6 +33,9 @@ const eventSchema = new Schema(
     confirmed: [{
       type: Schema.Types.ObjectId, ref: "User",
     }],
+    allFavourites: [{
+      type: Schema.Types.ObjectId, ref: "User"
+    }]
   },
   {
     timestamps: true,

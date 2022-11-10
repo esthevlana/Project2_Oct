@@ -1,16 +1,42 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  <title>{{appTitle}}</title>
+</head>
+
+<body>
+
+
 <section id="start">
 
-  <h3 class="start_welcome">Welcome to</h3>
-  <img src="/images/logo-branco.png" alt="" class="start_logo">
+  <div>
 
-  <div id="start_img_btn">
-    <img src="/images/start.png" alt="" class="start_img">
-    <p class="start_p">Find events and make new friends in a new city.</p>
+    <div class="wel-logo">
+      <h3 class="start_welcome">Welcome to</h3>
+      <img src="/images/logo-branco.png" alt="" class="start_logo">
+    </div>
+
+    <div id="start_img_btn">
+      <img src="/images/start.png" alt="" class="start_img">
+      <p class="start_p">FIND EVENTS AND MAKE NEW FRIENDS IN A NEW CITY</p>
+    </div>
 
     <div class="startbutton">
-      <a href="/auth/login" role="button" class="start_login-btn">Login</a>
-      <a href="/auth/signup" role="button" class="start_signup-btn">Sign up</a>
+      <button class="startbuttonlogin"><a href="/auth/login" class="start_login-btn">Login</a></button>
+      <button class="startbuttonsignup"><a href="/auth/signup" class="start_signup-btn">Sign up</a></button>
     </div>
+
   </div>
 
   {{!-- <div id="login-form">
@@ -43,5 +69,4 @@
       {{!--
     </form>
   </div> --}}
-
 </section>
