@@ -29,6 +29,9 @@ const userSchema = new Schema(
      confirmedEvents: [{
       type: Schema.Types.ObjectId, ref: "Event"
      }],
+     favouriteEvents : [{
+      type: Schema.Types.ObjectId, ref: "Event"
+     }],
      commentsUser: [{ 
       type: Schema.Types.ObjectId, ref: "Comment" 
     }],
