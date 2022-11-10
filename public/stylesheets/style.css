@@ -287,7 +287,7 @@ form.searchform input[type=text] {
   font-size: 17px;
   border: 1px solid rgba(128, 128, 128, 0.352);
   float: left;
-  width: 85%;
+  width: 100%;
   border-radius: 60px;
   background: #ffffff9e;
   outline: none;
@@ -680,10 +680,10 @@ form.searchform::after {
   align-content: center;
 }
 
-.eventform button {
+/* .eventform button {
   width: 10em;
   margin-top: 1em;
-}
+} */
 
 .commentbox {
   font-size: 1.5em;
@@ -703,10 +703,9 @@ form.searchform::after {
 .delete-comment_btn {
   background-color: #CB236D;
   border: none;
-  padding: 5px;
   border-radius: 5px;
   margin-left: 10px;
-  font-size: 0.5em;
+  font-size: 1em;
 }
 
 .allcomments h2 {
@@ -761,6 +760,11 @@ form.searchform::after {
 
 /* PROFILE */
 
+.profile-logo {
+  width: 50vw;
+  margin-left: 70px;
+}
+
 .profilebody {
   background-color: #A01FCC;
   height: 100%;
@@ -768,13 +772,19 @@ form.searchform::after {
 }
 
 .profilebody h1 {
-  font-size: 2.8em;
-  color: #C3D43C;
+  font-size: 2.5em;
+  color: #d9ed42;
+  margin-left: 20px;
+  padding-top: 20px;
 }
 
 .profilebody h2 {
   color: #fff;
   font-size: 1.5em;
+}
+
+.coisinhacolorida {
+  color: #C3D43C;
 }
 
 .imgprofile img {
@@ -789,20 +799,20 @@ form.searchform::after {
   padding: 20px;
   border-radius: 12px;
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-start;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
 }
 
 .username {
   display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-start;
-	align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
   margin-top: 10px;
 }
 
@@ -856,13 +866,14 @@ form.searchform::after {
   margin-top: 20px;
   font-size: 1.2em;
 }
+
 .favouriteevents a {
   color: #fff;
   margin-top: 20px;
 }
 
 .favconfevents {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .favconfevents h3 {
@@ -900,7 +911,8 @@ form.searchform::after {
   width: 100%;
   background-color: #fff;
   padding: 6px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   border-top: 4px solid rgba(0, 0, 0, 0.174);
   text-align: center;
   display: flex;
@@ -913,4 +925,39 @@ form.searchform::after {
 
 .bi {
   color: #A01FCC;
+}
+
+/* SEARCH RESULT PAGE */
+
+#search-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #A01FCC;
+  padding: 20px;
+}
+
+.imgsearchresult {
+  width: 40vw;
+}
+
+.result_h1 {
+  font-size: 2em;
+  color: #dbef42;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.search-result_img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5px 5px;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
