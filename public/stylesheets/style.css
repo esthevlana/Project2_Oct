@@ -761,6 +761,11 @@ form.searchform::after {
 
 /* PROFILE */
 
+.profile-logo {
+  width: 50vw;
+  margin-left: 70px;
+}
+
 .profilebody {
   background-color: #A01FCC;
   height: 100%;
@@ -768,13 +773,19 @@ form.searchform::after {
 }
 
 .profilebody h1 {
-  font-size: 2.8em;
-  color: #C3D43C;
+  font-size: 2.5em;
+  color: #d9ed42;
+  margin-left: 20px;
+  padding-top: 20px;
 }
 
 .profilebody h2 {
   color: #fff;
   font-size: 1.5em;
+}
+
+.coisinhacolorida {
+  color: #C3D43C;
 }
 
 .imgprofile img {
@@ -789,20 +800,20 @@ form.searchform::after {
   padding: 20px;
   border-radius: 12px;
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-start;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
 }
 
 .username {
   display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-start;
-	align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
   margin-top: 10px;
 }
 
@@ -856,13 +867,14 @@ form.searchform::after {
   margin-top: 20px;
   font-size: 1.2em;
 }
+
 .favouriteevents a {
   color: #fff;
   margin-top: 20px;
 }
 
 .favconfevents {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .favconfevents h3 {
@@ -900,7 +912,8 @@ form.searchform::after {
   width: 100%;
   background-color: #fff;
   padding: 6px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   border-top: 4px solid rgba(0, 0, 0, 0.174);
   text-align: center;
   display: flex;
@@ -913,4 +926,10 @@ form.searchform::after {
 
 .bi {
   color: #A01FCC;
+}
+
+/* SEARCH RESULT PAGE */
+
+.imgsearchresult {
+  width: 20vw;
 }
