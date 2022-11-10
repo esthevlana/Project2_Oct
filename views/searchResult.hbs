@@ -1,3 +1,15 @@
-{{#each foundEvents}}
-<a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
-{{/each}}
+<div id="search-page">
+
+    <img src="/images/logo-branco.png" alt="" class="profile-logo">
+
+
+    <h1 class="result_h1">Search Result:</h1>
+
+
+    <div class="result">
+        {{#each foundEvents}}
+        <div class="search-result_img"><a href='/event-details/{{_id}}'><img src="{{imageUrl}}"
+                    class="imgsearchresult"></a></div>
+        {{/each}}
+    </div>
+</div>
