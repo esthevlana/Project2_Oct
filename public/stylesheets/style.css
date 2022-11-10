@@ -689,8 +689,8 @@ form.searchform::after {
 }
 
 .profilebody h1 {
-  font-size: 2em;
-  color: #fff;
+  font-size: 2.8em;
+  color: #C3D43C;
 }
 
 .profilebody h2 {
@@ -699,15 +699,41 @@ form.searchform::after {
 }
 
 .imgprofile img {
-  max-width: 20vw;
+  max-width: 30vw;
 }
 
 .userinfo {
   background-color: rgba(255, 255, 255, 0.4);
   width: 80vw;
+  height: 50vw;
   margin: 20px;
   padding: 20px;
   border-radius: 12px;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+}
+
+.username {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+  margin-top: 10px;
+}
+
+.username h2 {
+  font-size: 2em;
+}
+
+.username a {
+  font-size: 1em;
+  color: #ffffffb5;
 }
 
 .infoprofilebox {
@@ -726,7 +752,15 @@ form.searchform::after {
   justify-content: flex-start;
   align-items: stretch;
   align-content: flex-start;
+}
 
+.favouriteevents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
 }
 
 .confirmedevents h3 {
@@ -743,10 +777,42 @@ form.searchform::after {
   margin-top: 20px;
   font-size: 1.2em;
 }
+.favouriteevents a {
+  color: #fff;
+  margin-top: 20px;
+}
+
+.favconfevents {
+  margin-top: 40px;
+}
+
+.favconfevents h3 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.favconfevets2 {
+  margin-top: 20px;
+  background-color: rgba(66, 56, 57, 0.5);
+  padding: 10px
+}
 
 .eventslist {
   margin-right: 8px;
+  font-size: 3em;
 }
+
+.eventslist a {
+  font-size: 0.5em;
+}
+
+.squareevents {
+  background-color: rgba(66, 56, 57, 0.5);
+  padding: 10px
+}
+
+/* FOOTER MENU */
 
 .footermenu {
   position: fixed;

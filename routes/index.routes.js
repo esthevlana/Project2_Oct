@@ -92,7 +92,7 @@ router.get('/event-details/:id', async (req, res, next) => {
         //Se quiserem uma lista de users
         //.populate("confirmed")
 
-        console.log(event);
+/*         console.log(event); */
         res.render('events/event-details', event);
     } catch (error) {
         console.log(error);
@@ -192,7 +192,7 @@ router.get("/event-delete/:id", async (req, res, next) => {
         const eventToDelete = await Event.findById(id)
 
         if (loggedUser == eventToDelete.creator) {
-            await Event.findByIdAndRemove(id)
+            await Event.findByIdAndDelete(id)
             res.redirect("/");
         } else {
             res.redirect(`/event-details/${id}`);
@@ -204,6 +204,9 @@ router.get("/event-delete/:id", async (req, res, next) => {
         next(error)
     }
 })
+
+
+
 
 router.get('/event-confirm/:id', isLoggedIn, async (req, res, next) => {
     try {
