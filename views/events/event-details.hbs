@@ -3,36 +3,47 @@
 </header>
 
 <div class="eventdetailspage">
-<div class="topicons">
-    <a href=""/favourite-event/{{_id}}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-    </svg></a>
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
-         <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
-    </svg></a>
-    <div class="eventconfirm">
-       <a href="/event-confirm/{{_id}}"><button type="button" class="confirmbutton">WannaGo!</button></a>
+
+
+    <div class="fav-share-wanna">
+        <div class="topicons">
+            <a href="" /favourite-event/{{_id}}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="20"
+                    fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path
+                        d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                </svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                    class="bi bi-share" viewBox="0 0 16 16">
+                    <path
+                        d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                </svg></a>
+        </div>
+
+        <div>
+            <a href="/event-confirm/{{_id}}"><button type="button" class="confirmbutton">WannaGo!</button></a>
+        </div>
     </div>
 
-<div class="eventinfo">
-    <h1>{{title}}</h1> 
+    <div class="eventinfo">
+        <h1>{{title}}</h1>
 
-    
 
-    <a href="/event-edit/{{_id}}">Edit Event</a> | <a href="/event-delete/{{_id}}">Delete Event</a>
-   
-    <hr />
-    <img src="{{imageUrl}}" alt='event image'/>
-    <p class="creatorlink">Created by <a href="#">{{creator.username}}</a></p>
 
-    <p>Description: {{description}}</p>
-    <hr/>
-    <div class="eventicons">
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-            </svg> Date: {{date}}
-        </p>
+        <a href="/event-edit/{{_id}}">Edit Event</a> | <a href="/event-delete/{{_id}}">Delete Event</a>
+
+        <img src="{{imageUrl}}" alt='event image' />
+        <p class="creatorlink">Created by <a href="#">{{creator.username}}</a></p>
+
+        <p>Description: {{description}}</p>
+        <hr />
+        <div class="eventicons">
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                </svg> Date: {{date}}
+            </p>
 
             <p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock"
@@ -63,34 +74,34 @@
         </div>
 
         <div>
-        <p>Attending: {{confirmed.length}}</p>
-        <p>All Favourites: {{allFavourites.length}}</p>
+            <p>Attending: {{confirmed.length}}</p>
+            <p>All Favourites: {{allFavourites.length}}</p>
         </div>
 
         <hr />
 
-<h4>Leave a comment</h4>
+        <h4>Leave a comment</h4>
 
-<form action="/comments/create/{{_id}}" method="post">
+        <form action="/comments/create/{{_id}}" method="post">
 
-    <label for="content"></label>
-    <textarea name="content" id="content" cols="150" rows="10"></textarea>
-    <button type="submit">Create a Comment</button>
-</form>
+            <label for="content"></label>
+            <textarea name="content" id="content" cols="50" rows="10"></textarea>
+            <button type="submit">Create a Comment</button>
+        </form>
 
         <hr />
 
-{{#each comments}}
-<h4>Comments</h4>
-    <span><a href="/auth/profile">{{author.username}}</a></span>: 
-    <br/>
-<div class="commentbox">
-    {{content}}
-</div>
-<form action="/comment-delete/{{_id}}/{{../_id}}" method="post">
-    <button type="submit">Delete Comment</button>
-</form>
+        {{#each comments}}
+        <h4>Comments</h4>
+        <span><a href="/auth/profile">{{author.username}}</a></span>:
+        <br />
+        <div class="commentbox">
+            {{content}}
+        </div>
+        <form action="/comment-delete/{{_id}}/{{../_id}}" method="post">
+            <button type="submit">Delete Comment</button>
+        </form>
 
-{{/each}}
-</div>
+        {{/each}}
+    </div>
 </div>

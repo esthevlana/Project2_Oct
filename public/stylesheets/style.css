@@ -489,10 +489,20 @@ form.searchform::after {
 
 /* EVENT DETAILS */
 
+.fav-share-wanna {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
 .eventdetailspage {
   background-color: #efefef;
-  padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.eventdetailspage img {
+  width: 100vw;
 }
 
 .topicons {
@@ -567,7 +577,7 @@ form.searchform::after {
   margin-bottom: 2em;
 }
 
-.eventimage {
+/* .eventimage {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -575,7 +585,7 @@ form.searchform::after {
   align-items: center;
   align-content: center;
   margin-top: 7em;
-}
+} */
 
 .eventicons {
   display: flex;
@@ -702,11 +712,11 @@ form.searchform::after {
 
 .infoprofilebox {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .confirmedevents h3 {
