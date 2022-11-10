@@ -89,6 +89,8 @@ router.get('/event-details/:id', async (req, res, next) => {
                 },
             })
             .populate('creator')
+            //Se quiserem uma lista de users
+            //.populate("confirmed")
 
         console.log(event);
         res.render('events/event-details', event);
@@ -200,6 +202,20 @@ router.get("/event-delete/:id", async (req, res, next) => {
     } catch (error) {
         console.log(error)
         next(error)
+    }
+})
+
+router.get('/event-confirm/:id', isLoggedIn, async(req, res, next) => {
+    try {
+        const {id} = req.params
+        const userId = req.session.currentUser._id
+
+        await User.findByIdAndUpdate(userId, {$push: {confirmedEvents: id}})
+        await Event.findByIdAndUpdate(id, {$push: {confirmed: userId}})
+
+        res.redirect('/auth/profile')
+    } catch (error) {
+        console.log(error)
     }
 })
 

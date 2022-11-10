@@ -87,7 +87,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
 
 // GET /auth/login
 router.get("/login", isLoggedOut, (req, res) => {
-  res.render("auth/login");
+  res.render("auth/login", {layout: false});
 });
 
 // POST /auth/login
@@ -150,10 +150,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get('/profile', isLoggedIn, (req, res) => {
-  const user = req.session.user;
-  console.log(user);
-  res.render('auth/profile', user);
+router.get('/profile', isLoggedIn, async(req, res) => {
+  try {
+    const userId = req.session.currentUser._id;
+    const user = await User.findById(userId).populate("confirmedEvents")
+    res.render('auth/profile', user);
+  } catch (error) {
+    console.log(error)
+  }
 });
 
 

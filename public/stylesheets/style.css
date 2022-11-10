@@ -74,7 +74,6 @@ body {
 }
 
 .start_login-btn {
-  background-color: #C3D43C;
   color: black;
   border-radius: 13px;
   font-weight: bolder;
@@ -86,13 +85,11 @@ body {
 }
 
 .start_login-btn:hover {
-  background: #fff;
   color: #C3D43C;
   transition: 0.3s ease background;
 }
 
 .start_signup-btn {
-  background-color: white;
   color: black;
   border-radius: 13px;
   font-weight: bolder;
@@ -105,9 +102,42 @@ body {
 }
 
 .start_signup-btn:hover {
-  background: #C3D43C;
-  color: #fff;
+  color: #000;
   transition: 0.3s ease background;
+}
+
+.startbuttonlogin {
+  background-color: #C3D43C;
+  border-style: none;
+  border-radius: 16px;
+  font-size: 2em;
+  height: 2em;
+}
+
+.startbuttonlogin:hover {
+  background-color: #fff;
+  border-style: none;
+  border: 1px solid #C3D43C;
+  border-radius: 16px;
+  font-size: 2em;
+  height: 2em;
+}
+
+.startbuttonsignup {
+  background-color: #fff;
+  border-style: none;
+  border-radius: 16px;
+  font-size: 2em;
+  height: 2em;
+}
+
+.startbuttonsignup:hover {
+  background-color: #C3D43C;
+  border-style: none;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  font-size: 2em;
+  height: 2em;
 }
 
 a:link {
@@ -623,4 +653,20 @@ form.searchform::after {
   font-size: 2em;
   color: #423839;
   text-align: center;
+}
+
+.footermenu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #A01FCC;
+  text-align: center;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: center;
 }
