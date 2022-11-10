@@ -20,6 +20,15 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    imageUser:
+    {
+      type: String,
+      default: 'https://res.cloudinary.com/dwjj0oqwe/image/upload/v1668008376/WannaGo/playerone_2_zwiyii.png'
+     },
+     about: String,
+     commentsUser: [{ 
+      type: Schema.Types.ObjectId, ref: "Comment" 
+    }],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

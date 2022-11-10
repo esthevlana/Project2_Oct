@@ -1,23 +1,25 @@
 <section id="start">
 
-  <h3>Welcome to</h3>
-  <h1>WannaGo</h1>
-  <img src="/images/start.png" alt="" class="start_img">
-  <p>Find events in the city and make new friends.</p>
+  <h3 class="start_welcome">Welcome to</h3>
+  <img src="/images/logo-branco.png" alt="" class="start_logo">
 
-  <div class="startbutton">
-    <a href="/auth/login" role="button" class="start_login-btn">Login</a>
-    <a href="/auth/signup" role="button" class="start_signup-btn">Sign up</a>
+  <div id="start_img_btn">
+    <img src="/images/start.png" alt="" class="start_img">
+    <p class="start_p">Find events and make new friends in a new city.</p>
+
+    <div class="startbutton">
+      <a href="/auth/login" role="button" class="start_login-btn">Login</a>
+      <a href="/auth/signup" role="button" class="start_signup-btn">Sign up</a>
+    </div>
   </div>
-
 
   {{!-- <div id="login-form">
     <h2>Log In</h2>
     <form action="/startauth/login" method="POST">
 
-       <label> Username
+      <label> Username
         <input type="text" name="username" placeholder="Your username" />
-      </label> 
+      </label>
 
       <label> Email
         <input type="email" name="email" placeholder="Your email" />
@@ -38,7 +40,8 @@
       {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
       {{/if}}
-    {{!-- </form>
+      {{!--
+    </form>
   </div> --}}
 
 </section>

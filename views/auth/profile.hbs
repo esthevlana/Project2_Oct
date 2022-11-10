@@ -1,0 +1,22 @@
+<h1>Hello, {{username}}!</h1>
+
+<a href="/auth/logout">Logout</a>
+
+
+<img src="{{user.imageUser}}" alt="photo">
+<div class='profile-photo'>
+      <label for='imageUser'>
+        Profile photo:
+        <input type='file' name='imageUser' />
+      </label>
+      <button type="submit">Submit</button>
+    </div>
+
+  <form action="/profile-edit" method="post">
+
+    <label for="content"></label>
+    <textarea name="content" id="content" cols="150" rows="10"></textarea
+
+<form action='/profile-edit' method='post'>
+  <button type='submit'>Edit profile</button>
+</form>

@@ -1,5 +1,6 @@
 <div class="signup-form">
-  <h1><a href="/start">WannaGo</a></h1>
+  <a href="/start"><img src="/images/logo.png" alt="" class="create-img"></a>
+
   <h3>Sign Up</h3>
   <form action="/auth/signup" method="POST">
 
@@ -23,7 +24,7 @@
 
 
     {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
+    <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
