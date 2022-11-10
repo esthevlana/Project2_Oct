@@ -4,7 +4,7 @@
 <div class="infoprofilebox">
 <div class="userinfo">
   <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
-  <div><h2>{{username}}!</h2></div>
+  <div class="username"><h2>{{username}}</h2></div>
 
   <a href="/auth/logout">Logout</a>
 
@@ -12,11 +12,11 @@
 </div>
 
 <div class="favconfevents">
-<div class="confirmedevents">
   <h3>Confirmed Events</h3>
+<div class="confirmedevents">
   <br/>
 {{#each confirmedEvents}}
-<p>{{title}}</p>
+<div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
 {{/each}}
 </div>
 <div class="favouriteevents">
