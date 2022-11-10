@@ -20,48 +20,51 @@
 
 <section id="start">
 
-  <h3 class="start_welcome">Welcome to</h3>
-  <img src="/images/logo-branco.png" alt="" class="start_logo">
-
-  <div id="start_img_btn">
-    <img src="/images/start.png" alt="" class="start_img">
-    <p class="start_p">Find events and make new friends in a new city.</p>
-
-    <div class="startbutton">
-      <button class="startbuttonlogin"><a href="/auth/login" class="start_login-btn">Login</a></button>
-      <button class="startbuttonsignup"><a href="/auth/signup" class="start_signup-btn">Sign up</a></button>
+  <div>
+    <div class="wel-logo">
+      <h3 class="start_welcome">Welcome to</h3>
+      <img src="/images/logo-branco.png" alt="" class="start_logo">
     </div>
-  </div>
+    <div id="start_img_btn">
+      <img src="/images/start.png" alt="" class="start_img">
+      <p class="start_p">Find events and make new friends in a new city.</p>
 
-  {{!-- <div id="login-form">
-    <h2>Log In</h2>
-    <form action="/startauth/login" method="POST">
+      <div class="startbutton">
+        <button class="startbuttonlogin"><a href="/auth/login" class="start_login-btn">Login</a></button>
+        <button class="startbuttonsignup"><a href="/auth/signup" class="start_signup-btn">Sign up</a></button>
+      </div>
 
-      <label> Username
-        <input type="text" name="username" placeholder="Your username" />
-      </label>
+    </div>
 
-      <label> Email
-        <input type="email" name="email" placeholder="Your email" />
-      </label>
+    {{!-- <div id="login-form">
+      <h2>Log In</h2>
+      <form action="/startauth/login" method="POST">
 
-      <label> Password
-        <input type="password" name="password" placeholder="Your password" />
-      </label>
+        <label> Username
+          <input type="text" name="username" placeholder="Your username" />
+        </label>
 
-      <button type="submit">Log In</button>
+        <label> Email
+          <input type="email" name="email" placeholder="Your email" />
+        </label>
 
-      <p>New around here?</p>
-      <form action="/auth/signup" method="post">
-        <button type="submit">Sign Up</button>
+        <label> Password
+          <input type="password" name="password" placeholder="Your password" />
+        </label>
+
+        <button type="submit">Log In</button>
+
+        <p>New around here?</p>
+        <form action="/auth/signup" method="post">
+          <button type="submit">Sign Up</button>
+        </form>
+        --}}
+
+        {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+        {{/if}}
+        {{!--
       </form>
-      --}}
-
-      {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-      {{/if}}
-      {{!--
-    </form>
-  </div> --}}
+    </div> --}}
 
 </section>
