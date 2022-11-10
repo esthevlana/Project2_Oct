@@ -154,7 +154,8 @@ a:link {
   align-items: center;
   align-content: center;
   text-align: center;
-  padding: 50px;
+  padding: 50px 0;
+  padding-top: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -167,7 +168,7 @@ a:link {
 form {
   margin: 30px auto;
   text-align: center;
-  width: 60vw;
+  width: 80vw;
 }
 
 form label {
@@ -675,7 +676,9 @@ form.searchform::after {
   bottom: 0;
   width: 100%;
   background-color: #fff;
-  color: #A01FCC;
+  padding: 6px;
+  border-radius: 10px;
+  border-top: 4px solid rgba(0, 0, 0, 0.174);
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -683,4 +686,8 @@ form.searchform::after {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+}
+
+.bi {
+  color: #A01FCC;
 }
