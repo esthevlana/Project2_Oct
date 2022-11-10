@@ -18,11 +18,11 @@
 
   <h2 class="index_h2">FEATURED EVENTS</h2>
 
-  <div class="event_container2">
+  {{!-- <div class="event_container2">
     {{#each twoEvents}}
     {{> indexpartial this}}
     {{/each}}
-  </div>
+  </div> --}}
 
   <div class="container">
     <h2 class="index_h2">SELECT:</h2>
@@ -62,7 +62,9 @@
   <h2 class="index_h2">ALL EVENTS</h2>
   <div class="event_container2">
     {{#each events}}
-    {{> indexpartial this}}
+    <div class="events-index_each">
+      {{> indexpartial this}}
+    </div>
     {{/each}}
   </div>
 

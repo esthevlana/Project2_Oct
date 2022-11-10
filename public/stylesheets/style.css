@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  /*   justify-content: space-evenly; */
+  justify-content: space-evenly;
   align-items: center;
   align-content: center;
   padding: 30px;
@@ -41,15 +41,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   margin-bottom: 40px;
+  margin-top: 40px;
 
 }
 
 .start_logo {
-  width: 60vw;
+  width: 70vw;
 }
 
 .start_img {
-  width: 35vw;
+  width: 50vw;
+  margin-top: 40px;
 }
 
 /* #start_img_btn {
@@ -407,6 +409,7 @@ form.searchform::after {
 
 .event-index_img {
   width: 30vw;
+  max-width: 30vw;
 
 }
 
@@ -416,9 +419,18 @@ form.searchform::after {
 
 .event_container2 {
   display: flex;
+  flex-direction: row;
+  background-size: cover;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 50px;
+}
+
+.events-index_each {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*LOGOUT*/
@@ -452,11 +464,11 @@ form.searchform::after {
 
 .topicons {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
 }
 
 .topicons a {
@@ -487,7 +499,7 @@ form.searchform::after {
   color: #000;
   font-weight: bolder;
   font-size: 1.5em;
-  color:#d6ea3e;
+  color: #d6ea3e;
   cursor: pointer;
 }
 
@@ -524,21 +536,21 @@ form.searchform::after {
 
 .eventimage {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   margin-top: 7em;
 }
 
 .eventicons {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
   font-size: 3em;
 }
 
@@ -568,11 +580,11 @@ form.searchform::after {
 
 .eventform {
   display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .eventform button {
