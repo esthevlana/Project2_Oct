@@ -4,26 +4,28 @@
 <div class="infoprofilebox">
 <div class="userinfo">
   <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
-  <div class="username"><h2>{{username}}</h2></div>
-
-  <a href="/auth/logout">Logout</a>
+  <div class="username"><h2>{{username}}</h2><a href="/auth/logout">Logout</a></div>
 
 </div>
 </div>
 
 <div class="favconfevents">
+  <div class="squareevents">
   <h3>Confirmed Events</h3>
 <div class="confirmedevents">
   <br/>
-{{#each confirmedEvents}}
-<div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
-{{/each}}
+    {{#each confirmedEvents}}
+      <div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
+    {{/each}}
 </div>
-<div class="favouriteevents">
-  <h3>Favourite Events</h3>
-{{#each favouriteEvents}}
-<p>{{title}}</p>
-{{/each}}
+</div>
+<div class="favconfevets2">
+    <h3>Favourite Events</h3>
+  <div class="favouriteevents">
+      {{#each favouriteEvents}}
+        <div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
+      {{/each}}
+  </div>
 </div>
 </div>
 
