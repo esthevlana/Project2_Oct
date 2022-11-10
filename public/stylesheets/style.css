@@ -669,6 +669,60 @@ form.searchform::after {
   text-align: center;
 }
 
+/* PROFILE */
+
+.profilebody {
+  background-color: #A01FCC;
+  height: 100%;
+  padding: 20px;
+}
+
+.profilebody h1 {
+  font-size: 2em;
+  color: #fff;
+}
+
+.profilebody h2 {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.imgprofile img {
+  max-width: 20vw;
+}
+
+.userinfo {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 80vw;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.infoprofilebox {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.confirmedevents h3 {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.confirmedevents p {
+  color: #fff;
+}
+
+.favouriteevents h3 {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
 .footermenu {
   position: fixed;
   left: 0;

@@ -1,30 +1,46 @@
-<h1>Hello, {{username}}!</h1>
+<section class="profilebody">
+  <h1>Profile</h1>
 
-<a href="/auth/logout">Logout</a>
+<div class="infoprofilebox">
+<div class="userinfo">
+  <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
+  <div><h2>{{username}}!</h2></div>
 
+  <a href="/auth/logout">Logout</a>
+
+</div>
+</div>
+
+<div class="favconfevents">
+<div class="confirmedevents">
+  <h3>Confirmed Events</h3>
+  <br/>
 {{#each confirmedEvents}}
 <p>{{title}}</p>
 {{/each}}
+</div>
+<div class="favouriteevents">
+  <h3>Favourite Events</h3>
 {{#each favouriteEvents}}
 <p>{{title}}</p>
 {{/each}}
+</div>
+</div>
 
-
-<img src="{{imageUser}}" alt="photo">
-<div class='profile-photo'>
+{{!-- <div class='profile-photo'>
       <label for='imageUser'>
         Profile photo:
         <input type='file' name='imageUser' />
       </label>
       <button type="submit">Submit</button>
-    </div>
+    </div> --}}
 
-  <form action="/profile-edit" method="post">
+ {{!--  <form action="/profile-edit" method="post">
 
     <label for="content"></label>
     <textarea name="content" id="content" cols="150" rows="10"></textarea
 
 <form action='/profile-edit' method='post'>
   <button type='submit'>Edit profile</button>
-</form>
-
+</form> --}}
+</section>
