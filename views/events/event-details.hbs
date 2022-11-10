@@ -116,9 +116,9 @@
             {{content}}
         </div>
 
-        {{!-- <form action="/comment-delete/{{_id}}/{{../_id}}" method="post"> --}}
-            <button action="/comment-delete/{{_id}}/{{../_id}}" method="post" type="submit"
-                class="delete-comment_btn">Delete Comment</button>
+        <form action="/comment-delete/{{_id}}/{{../_id}}" method="post">
+            <button type="submit" class="delete-comment_btn">Delete Comment</button>
+        </form>
 
             {{/each}}
     </div>
