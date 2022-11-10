@@ -25,20 +25,26 @@
     </div>
 
     <div class="eventinfo">
-        <h1>{{title}}</h1>
 
-
-
-        <a href="/event-edit/{{_id}}">Edit Event</a> | <a href="/event-delete/{{_id}}">Delete Event</a>
 
         <img src="{{imageUrl}}" alt='event image' />
-        <p class="creatorlink">Created by <a href="#">{{creator.username}}</a></p>
+        {{!-- <h1>{{title}}</h1> --}}
 
-        <p>Description: {{description}}</p>
+        <p class="details_description">Description: {{description}}</p>
+
+        <div class="createdby_editdelete">
+            <p class="creatorlink">Created by <a href="#">{{creator.username}}</a></p>
+            <button class="editdeletebutton"> <a href="/event-edit/{{_id}}">Edit Event</a> </button>
+            <button class="editdeletebutton"> <a href="/event-delete/{{_id}}">Delete Event</a> </button>
+        </div>
+
+
         <hr />
+
+
         <div class="eventicons">
             <p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                     class="bi bi-calendar" viewBox="0 0 16 16">
                     <path
                         d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
@@ -46,7 +52,7 @@
             </p>
 
             <p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock"
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-clock"
                     viewBox="0 0 16 16">
                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
@@ -73,35 +79,47 @@
             </p>
         </div>
 
-        <div>
-            <p>Attending: {{confirmed.length}}</p>
-            <p>All Favourites: {{allFavourites.length}}</p>
+        <hr />
+
+        <div class="favs-conf_details">
+            <div class="num_conf">
+                <div class="numeros_details"> {{confirmed.length}}</div>
+                <p>ATTENDING</p>
+            </div>
+
+            <div class="num_conf">
+                <div class="numeros_details"> {{allFavourites.length}}</div>
+                <p>FAVOURITES</p>
+            </div>
         </div>
 
         <hr />
 
-        <h4>Leave a comment</h4>
+
+        <h4 class="details_h4">Leave a comment</h4>
 
         <form action="/comments/create/{{_id}}" method="post">
 
             <label for="content"></label>
             <textarea name="content" id="content" cols="50" rows="10"></textarea>
-            <button type="submit">Create a Comment</button>
+            <button type="submit" class="create-comment_btn">Create a Comment</button>
         </form>
 
         <hr />
 
         {{#each comments}}
-        <h4>Comments</h4>
-        <span><a href="/auth/profile">{{author.username}}</a></span>:
+        <h4 class="details_h4">Comments</h4>
+
+        <div class="user-comment"> <span><a href="/auth/profile">{{author.username}}</a></span>:</div>
         <br />
         <div class="commentbox">
             {{content}}
         </div>
-        <form action="/comment-delete/{{_id}}/{{../_id}}" method="post">
-            <button type="submit">Delete Comment</button>
-        </form>
 
-        {{/each}}
+        {{!-- <form action="/comment-delete/{{_id}}/{{../_id}}" method="post"> --}}
+            <button action="/comment-delete/{{_id}}/{{../_id}}" method="post" type="submit"
+                class="delete-comment_btn">Delete Comment</button>
+
+            {{/each}}
     </div>
 </div>

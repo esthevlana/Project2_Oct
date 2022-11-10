@@ -1,17 +1,18 @@
 <div id="create-event">
 
-  <a href="/"><img src="images/logo.png" alt="" class="create-img"></a>
+  <a href="/start"><img src="/images/logo.png" alt="" class="create-img"></a>
 
 
 
   <h1 class="create-event_h1">Create an Event</h1>
   {{!-- 'action' receive the route created, not a file or anything else --}}
+
   <form class="create_title" action="/event-create" method="post" enctype="multipart/form-data">
     <label for="title">Title</label>
     <input type="text" name="title" id="title" required />
 
     <label for="description">Description</label>
-    <textarea name="description" id="description" cols="110" rows="15" required></textarea>
+    <textarea name="description" id="description" cols="50" rows="15" required></textarea>
 
     <label for="price">Price</label>
     <input type="text" name="price" id="price" required />

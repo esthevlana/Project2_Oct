@@ -155,7 +155,7 @@ a:link {
   align-content: center;
   text-align: center;
   padding: 50px 0;
-  padding-top: 30px;
+  padding-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -251,6 +251,7 @@ form i:hover {
 
 #index {
   background-color: #f0f3f6;
+  padding-bottom: 80px;
 }
 
 .index_header {
@@ -494,15 +495,30 @@ form.searchform::after {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  padding: 20px 10px;
 }
 
 .eventdetailspage {
   background-color: #efefef;
   font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 100px;
 }
 
 .eventdetailspage img {
   width: 100vw;
+}
+
+.confirmbutton {
+  background-color: #d6ea3e;
+  border-color: #d6ea3e;
+  border-style: none;
+  width: 6em;
+  height: 2em;
+  color: #000;
+  font-weight: bolder;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .topicons {
@@ -522,18 +538,6 @@ form.searchform::after {
   color: #C3D43C;
 }
 
-.eventconfirm button {
-  background-color: #d6ea3e;
-  border-color: #d6ea3e;
-  border-style: none;
-  width: 6em;
-  height: 2em;
-  color: #000;
-  font-weight: bolder;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
 .eventconfirm button:hover {
   background-color: #fff;
   border: 1px solid #d6ea3e;
@@ -551,12 +555,19 @@ form.searchform::after {
   margin-top: 1em;
 }
 
+.details_description {
+  margin: 10px 5px;
+  font-size: 1.2em;
+  line-height: 20px;
+}
+
 .editdeletebutton {
   background-color: #a6a6a6;
   font-weight: bold;
   border: #a6a6a6;
   width: 8em;
   height: 2em;
+  border-radius: 5px;
 }
 
 .editdeletebutton a {
@@ -570,6 +581,16 @@ form.searchform::after {
 
 .editdeletebutton a:hover {
   color: #fff;
+}
+
+.createdby_editdelete {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 0 5px;
 }
 
 .eventinfo hr {
@@ -595,10 +616,33 @@ form.searchform::after {
   align-items: center;
   align-content: center;
   font-size: 3em;
+  line-height: 40px;
 }
 
 .eventicons p {
-  font-size: 0.6em;
+  font-size: 0.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.favs-conf_details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.num_conf {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+}
+
+.numeros_details {
+  color: #C3D43C;
+  font-size: 2em;
 }
 
 .eventdescription p {
@@ -607,14 +651,20 @@ form.searchform::after {
   width: 50em;
 }
 
+.details_h4 {
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+
 .creatorlink {
   margin-top: 10px;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .creatorlink a {
   margin-top: 10px;
-  font-size: 1.1em;
+  font-size: 1em;
+  color: #A01FCC;
 }
 
 .eventinfo h2 {
@@ -637,6 +687,26 @@ form.searchform::after {
 
 .commentbox {
   font-size: 1.5em;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.342);
+}
+
+.user-comment {
+  margin-left: 10px;
+}
+
+.user-comment a {
+  color: #A01FCC;
+}
+
+.delete-comment_btn {
+  background-color: #CB236D;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 0.5em;
 }
 
 .allcomments h2 {
@@ -645,7 +715,14 @@ form.searchform::after {
 }
 
 .allcomments button {
-  width: 9em;
+  width: 15em;
+  font-size: 1em;
+}
+
+.create-comment_btn {
+  width: 40vw;
+  height: 5vh;
+  margin-top: 20px;
   font-size: 1em;
 }
 
@@ -657,16 +734,17 @@ form.searchform::after {
 
 #create-event {
   background-color: #EFEFEF;
-}
-
-.create-img {
-  width: 200px;
+  padding-bottom: 50px;
 }
 
 .create_title {
   font-family: Arial, Helvetica, sans-serif;
   color: #423839;
-  width: 50vw;
+  width: 80vw;
+}
+
+.create-img {
+  max-width: 100vw;
 }
 
 .create_title input {
@@ -675,9 +753,10 @@ form.searchform::after {
 
 .create-event_h1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 2em;
+  font-size: 2.5em;
   color: #423839;
   text-align: center;
+  padding-top: 20px;
 }
 
 /* PROFILE */
