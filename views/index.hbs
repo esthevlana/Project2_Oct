@@ -15,12 +15,14 @@
     {{!-- <button type="submit"> <i class="fa fa-search"></i> </button> --}}
   </form>
 
-
+  {{!--
   <h2 class="index_h2">FEATURED EVENTS</h2>
 
-  {{!-- <div class="event_container2">
+  <div class="event_container2">
     {{#each twoEvents}}
-    {{> indexpartial this}}
+    <div class="events-index_each">
+      <a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
+    </div>
     {{/each}}
   </div> --}}
 
@@ -63,7 +65,7 @@
   <div class="event_container2">
     {{#each events}}
     <div class="events-index_each">
-      {{> indexpartial this}}
+      <a href='/event-details/{{_id}}'><img src="{{imageUrl}}"></a>
     </div>
     {{/each}}
   </div>
