@@ -15,10 +15,10 @@ router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
         const loggedUser = req.session.currentUser._id;
         const commentToDelete = await Comment.findById(id)
 
-        
-        if(loggedUser == commentToDelete.author){
+
+        if (loggedUser == commentToDelete.author) {
             await Comment.findByIdAndDelete(id)
-            
+
             res.redirect(`/event-details/${eventId}`);
         } else {
             res.redirect(`/`);
@@ -30,7 +30,7 @@ router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
     }
 })
 
-router.get('/start', (req, res, next) => res.render('start', {layout: false}));
+router.get('/start', (req, res, next) => res.render('start', { layout: false }));
 
 router.get('/', async (req, res, next) => {
     try {
@@ -89,8 +89,8 @@ router.get('/event-details/:id', async (req, res, next) => {
                 },
             })
             .populate('creator')
-            //Se quiserem uma lista de users
-            //.populate("confirmed")
+        //Se quiserem uma lista de users
+        //.populate("confirmed")
 
         console.log(event);
         res.render('events/event-details', event);
@@ -205,13 +205,13 @@ router.get("/event-delete/:id", async (req, res, next) => {
     }
 })
 
-router.get('/event-confirm/:id', isLoggedIn, async(req, res, next) => {
+router.get('/event-confirm/:id', isLoggedIn, async (req, res, next) => {
     try {
-        const {id} = req.params
+        const { id } = req.params
         const userId = req.session.currentUser._id
 
-        await User.findByIdAndUpdate(userId, {$push: {confirmedEvents: id}})
-        await Event.findByIdAndUpdate(id, {$push: {confirmed: userId}})
+        await User.findByIdAndUpdate(userId, { $push: { confirmedEvents: id } })
+        await Event.findByIdAndUpdate(id, { $push: { confirmed: userId } })
 
         res.redirect('/auth/profile')
     } catch (error) {
@@ -219,13 +219,13 @@ router.get('/event-confirm/:id', isLoggedIn, async(req, res, next) => {
     }
 })
 
-router.get('/favourite-event/:id', isLoggedIn, async(req, res, next) => {
+router.get('/favourite-event/:id', isLoggedIn, async (req, res, next) => {
     try {
-        const {id} = req.params
+        const { id } = req.params
         const userId = req.session.currentUser._id
 
-        await User.findByIdAndUpdate(userId, {$push: {favouriteEvents: id}})
-        await Event.findByIdAndUpdate(id, {$push: {allFavourites: userId}})
+        await User.findByIdAndUpdate(userId, { $push: { favouriteEvents: id } })
+        await Event.findByIdAndUpdate(id, { $push: { allFavourites: userId } })
 
         res.redirect('/auth/profile')
     } catch (error) {
