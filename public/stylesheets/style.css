@@ -680,10 +680,10 @@ form.searchform::after {
   align-content: center;
 }
 
-.eventform button {
+/* .eventform button {
   width: 10em;
   margin-top: 1em;
-}
+} */
 
 .commentbox {
   font-size: 1.5em;
@@ -703,10 +703,9 @@ form.searchform::after {
 .delete-comment_btn {
   background-color: #CB236D;
   border: none;
-  padding: 5px;
   border-radius: 5px;
   margin-left: 10px;
-  font-size: 0.5em;
+  font-size: 1em;
 }
 
 .allcomments h2 {
