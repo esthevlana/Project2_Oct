@@ -25,7 +25,10 @@ const userSchema = new Schema(
       type: String,
       default: 'https://res.cloudinary.com/dwjj0oqwe/image/upload/v1668008376/WannaGo/playerone_2_zwiyii.png'
      },
-     about: String,
+     about: {
+      type: String,
+      default: ' '
+     },
      confirmedEvents: [{
       type: Schema.Types.ObjectId, ref: "Event"
      }],

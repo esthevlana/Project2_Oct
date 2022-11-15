@@ -1,0 +1,14 @@
+<h1>Edit your info!</h1>
+
+<form action="/auth/profile-edit/{{_id}}" method="post" enctype="multipart/form-data">
+ <label for="about">About you</label>
+  <textarea name="about" id="about" cols="30" rows="10">{{about}}</textarea>
+
+<input type="text" value="{{imageUser}}" name="currentImage" hidden>
+  <label for='image'>
+    Upload your photo:
+    <input type='file' name='imageUser' class='form-control-file' />
+  </label>
+
+  <button type="submit">Edit</button>
+</form>

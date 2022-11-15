@@ -165,10 +165,10 @@ router.get('/profile', isLoggedIn, async(req, res) => {
 
 
 
-router.get("/profile-edit/:id", async (req, res, next) => {
+router.get('/profile-edit/:id', async (req, res, next) => {
   try {
-    const updateUser= await User.findById(req.params.id);
-    res.render("user/profile-edit", updateUser);
+    const updateUser = await User.findById(req.params.id);
+    res.render('auth/profile-edit', updateUser);
   } catch (error) {
     console.log(error);
     next(error);
@@ -179,18 +179,17 @@ router.post('/profile-edit/:id', isLoggedIn, fileUploader.single('imageUser'), a
   try {
   const {id} = req.params;
   const { username, about, imageUser} = req.body;
-  const updatedProfile = await User.findByIdAndUpdate(id, {
-    username,
-    imageUser,
-  });
+
+
+  console.log(about)
     
   if(req.file) {
-    User.findByIdAndUpdate( id, {username, about, imageUser: req.file.path}, {new: true})
-    res.redirect(`/auth/profile/${updatedProfile._id}`)};
+    const updatedProfile = await User.findByIdAndUpdate( id, { about, imageUser: req.file.path}, {new: true})
+    res.redirect(`/auth/profile`)};
    
    if(!req.file) {
-    User.findByIdAndUpdate( id, {username, about, imageUser: req.file.path}, {new: true})
-    res.redirect(`/auth/profile/${updatedProfile._id}`)}; 
+    const updatedProfile = await User.findByIdAndUpdate( id, {about}, {new: true})
+    res.redirect(`/auth/profile`)}; 
 
 } catch (error) {
   console.log(error);
