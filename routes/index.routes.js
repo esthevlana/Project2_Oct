@@ -9,27 +9,6 @@ const Comment = require('../models/Comment.model');
 
 /* GET home page */
 
-router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
-    try {
-        const { id, eventId } = req.params;
-        const loggedUser = req.session.currentUser._id;
-        const commentToDelete = await Comment.findById(id)
-
-
-        if (loggedUser == commentToDelete.author) {
-            await Comment.findByIdAndDelete(id)
-
-            res.redirect(`/event-details/${eventId}`);
-        } else {
-            res.redirect('/');
-        }
-
-    } catch (error) {
-        console.log(error)
-        next(error)
-    }
-})
-
 router.get('/start', (req, res, next) => res.render('start', { layout: false }));
 
 router.get('/', async (req, res, next) => {
@@ -44,9 +23,6 @@ router.get('/', async (req, res, next) => {
         next(error);
     }
 })
-/* router.get('/', (req, res, next) => {
-  res.render('index');
-}); */
 
 router.get('/search', async (req, res, next) => {
     try {
@@ -57,20 +33,30 @@ router.get('/search', async (req, res, next) => {
     } catch (error) {
         console.log(error)
     }
-    /* const currentUser = req.session.user
-      const { title } = req.query;
-    
-      Event.find({
-        
-           title: title 
-        
-      })
-      .then((results) => {
-        console.log(results)
-        res.render('searchResult', {results, currentUser})
-      })
-    .catch(err => next(err)) */
 
+})
+
+router.get('/search-category/:category', async (req, res, next) => {
+    try {
+        const category = req.params.category
+
+        if (category == 'outdoor'){
+            const foundEvents = await Event.find({ 'category': 'Outdoor Events' })
+            res.render('searchResult', { foundEvents });
+        } else if (category == 'party'){
+            const foundEvents = await Event.find({ 'category': 'Party and Music' })
+            res.render('searchResult', { foundEvents });
+        }else if (category == 'speech'){
+            const foundEvents = await Event.find({ 'category': 'Speeches and Networking' })
+            res.render('searchResult', { foundEvents });
+        }else if (category == 'cultural'){
+            const foundEvents = await Event.find({ 'category': 'Cultural Events' })
+            res.render('searchResult', { foundEvents });
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
 
 })
 
@@ -89,39 +75,13 @@ router.get('/event-details/:id', async (req, res, next) => {
                 },
             })
             .populate('creator')
-        //Se quiserem uma lista de users
-        //.populate("confirmed")
-
-/*         console.log(event); */
+    
         res.render('events/event-details', event);
     } catch (error) {
         console.log(error);
         next(error);
     }
 });
-
-/* router.get('/event-details/:id', async (req, res, next) => {
-    try {
-        const { id } = req.params;
-
-        const event = await Event.findById(id)
-            .populate('description')
-            .populate({
-                path: "description",
-                populate: {
-                    path: "creator",
-                    model: "User",
-                },
-            })
-
-        console.log(event);
-        res.render('events/event-details', event);
-    } catch (error) {
-        console.log(error);
-        next(error);
-    }
-});
- */
 
 router.get('/event-create', (req, res, next) => res.render('events/event-create'));
 router.post('/event-create', fileUploader.single('imageUrl'), async (req, res, next) => {
@@ -134,11 +94,11 @@ router.post('/event-create', fileUploader.single('imageUrl'), async (req, res, n
         }
 
 /*       const creator = req.session.currentUser._id;
- */     const { title, description, date, hour, price, city } = req.body;
+ */     const { title, description, category, date, hour, price, city} = req.body;
         console.log(req.body);
         const creator = req.session.currentUser._id;
 
-        const createdEvent = await Event.create({ creator, title, description, date, hour, price, city, imageUrl });
+        const createdEvent = await Event.create({ creator, title, description, category, date, hour, price, city, imageUrl });
 
 
         res.redirect(`/event-details/${createdEvent._id}`);
@@ -161,7 +121,7 @@ router.get('/event-edit/:id', async (req, res, next) => {
 router.post("/event-edit/:id", isLoggedIn, fileUploader.single('imageUrl'), async (req, res, next) => {
 
     const { id } = req.params
-    const { title, description, date, hour, price, city, currentImage } = req.body
+    const { title, description, category, date, hour, price, city, currentImage } = req.body
     const creator = req.session.currentUser._id;
 
     try {
@@ -174,7 +134,7 @@ router.post("/event-edit/:id", isLoggedIn, fileUploader.single('imageUrl'), asyn
             imageUrl = currentImage;
         }
 
-        const updatedEvent = await Event.findByIdAndUpdate(id, { title, description, date, hour, price, city, imageUrl });
+        const updatedEvent = await Event.findByIdAndUpdate(id, { title, description, category, date, hour, price, city, imageUrl });
 
         res.redirect(`/event-details/${updatedEvent._id}`);
 
@@ -204,9 +164,6 @@ router.get("/event-delete/:id", async (req, res, next) => {
         next(error)
     }
 })
-
-
-
 
 router.get('/event-confirm/:id', isLoggedIn, async (req, res, next) => {
     try {
@@ -252,21 +209,26 @@ router.post('/comments/create/:id', async (req, res, next) => {
     }
 });
 
+router.post("/comment-delete/:id/:eventId", async (req, res, next) => {
+    try {
+        const { id, eventId } = req.params;
+        const loggedUser = req.session.currentUser._id;
+        const commentToDelete = await Comment.findById(id)
 
-/* 
+
         if (loggedUser == commentToDelete.author) {
             await Comment.findByIdAndDelete(id)
-            res.redirect("/");
-        } else {
-            res.redirect(`/event-details/${eventId}`);
-        }
 
+            res.redirect(`/event-details/${eventId}`);
+        } else {
+            res.redirect('/');
+        }
 
     } catch (error) {
         console.log(error)
         next(error)
     }
-}) */
+})
 
 
 module.exports = router;

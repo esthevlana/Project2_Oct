@@ -24,6 +24,10 @@ const eventSchema = new Schema(
       type: String,
       default: 'https://res.cloudinary.com/dwjj0oqwe/image/upload/v1668008092/Event%20Images/default_kuqbbb.png'
     },
+    category: {
+      type: String,
+      enum: ['Outdoor Events', 'Party and Music', 'Speeches and Networking', 'Cultural Events']
+  },
     comments: [{
       type: Schema.Types.ObjectId, ref: "Comment",
     }],
