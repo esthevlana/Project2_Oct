@@ -18,6 +18,12 @@ router.get('/', async (req, res, next) => {
         res.render('index', { events, twoEvents });
         console.log(events);
 
+        if(isLoggedIn === true) {
+            res.render('index')
+        } else {
+            res.render('start')
+        }
+
     } catch (error) {
         console.log(error);
         next(error);
@@ -54,6 +60,18 @@ router.get('/search-category/:category', async (req, res, next) => {
             res.render('searchResult', { foundEvents });
         }
 
+    } catch (error) {
+        console.log(error)
+    }
+
+})
+
+router.get('/search-city', async (req, res, next) => {
+    try {
+        const { city } = req.query;
+        const foundEvents = await Event.find({ city: { $regex: new RegExp(city, "i") } })
+        console.log(foundEvents)
+        res.render('searchResult', { foundEvents });
     } catch (error) {
         console.log(error)
     }
@@ -193,7 +211,7 @@ router.get('/favourite-event/:id', isLoggedIn, async (req, res, next) => {
     }
 })
 
-router.post('/comments/create/:id', async (req, res, next) => {
+router.post('/comments/create/:id', isLoggedIn, fileUploader.single('imageUser'), async (req, res, next) => {
     const { id } = req.params;
     const { content } = req.body;
     const author = req.session.currentUser._id;
@@ -201,6 +219,7 @@ router.post('/comments/create/:id', async (req, res, next) => {
         const newComment = await Comment.create({ content, author });
         const commentUpdate = await Event.findByIdAndUpdate(id, { $push: { comments: newComment._id } })
         const userUpdate = await User.findByIdAndUpdate(author, { $push: { createdComments: newComment._id } });
+        console.log(profilePicture)
 
         res.redirect(`/event-details/${id}`);
     } catch (error) {

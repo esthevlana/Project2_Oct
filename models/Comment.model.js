@@ -7,6 +7,10 @@ const commentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User"
     },
+/*     profilePicture: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }, */
   },
   {
     timestamps: true,
