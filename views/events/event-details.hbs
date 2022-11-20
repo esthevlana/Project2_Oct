@@ -109,14 +109,19 @@
         <hr />
 
         <h4 class="details_h4">Comments</h4>
-        {{#each comments}}
-        <div class="user-comment"> <span><img src="{{author.imageUser}}" class="card-img-top" alt="...">
-            <a href="/auth/profile">{{author.username}}</a></span>:</div>
-        <br />
-        <div class="commentbox">
-            {{content}}
-        </div>
 
+        <div clas="comment-container">
+        {{#each comments}}
+            <div class="user-comment"> 
+             <span class="comment-img-user"><img src="{{author.imageUser}}" alt="...">
+             <a href="/auth/profile">{{author.username}}</a></span>:
+            </div>
+
+            <div class="commentbox">
+                {{content}}
+            </div>
+
+        </div>
         {{!--  --}}
         <form action="/comment-delete/{{_id}}/{{../_id}}" method="post" class="deletecommentform">
             <button type="submit" class="delete-comment_btn">Delete Comment</button>

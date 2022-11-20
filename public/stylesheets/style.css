@@ -23,7 +23,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  padding: 30px;
   text-align: center;
   height: 100vh;
 }
@@ -43,7 +42,6 @@ body {
   margin-bottom: 40px;
   margin-top: 40px;
   font-weight: bold;
-
 }
 
 .start_logo {
@@ -54,14 +52,6 @@ body {
   width: 55vw;
   margin-top: 40px;
 }
-
-/* #start_img_btn {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .startbutton {
   display: flex;
@@ -437,11 +427,6 @@ form.searchform::after {
 
 /*INDEX EVENT IMAGES*/
 
-.event-index_img {
-  width: 30vw;
-  max-width: 30vw;
-
-}
 
 .event_container {
   margin-bottom: 50px;
@@ -455,6 +440,11 @@ form.searchform::after {
   flex-wrap: wrap;
 }
 
+/* .event_container2 img {
+  width: 30vw;
+  max-width: 30vw;
+} */
+
 .events-index_each {
   display: flex;
   flex-direction: row;
@@ -464,7 +454,7 @@ form.searchform::after {
 }
 
 .events-index_each img {
-  max-width: 170px;
+  max-width: 48vw;
 }
 
 /*LOGOUT*/
@@ -598,16 +588,6 @@ form.searchform::after {
   margin-bottom: 2em;
 }
 
-/* .eventimage {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin-top: 7em;
-} */
-
 .eventicons {
   display: flex;
   flex-direction: row;
@@ -690,14 +670,33 @@ form.searchform::after {
   margin-left: 10px;
   margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.342);
+  width: 33vw;
 }
 
 .user-comment {
   margin-left: 10px;
+ /*  display: flex;
+	flex-direction: column; */
+  width: 33vw;
 }
 
 .user-comment a {
   color: #A01FCC;
+  font-size: 1.8em;
+}
+
+.comment-img-user img{
+  border-radius: 50%;
+  width: 11vw;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
 }
 
 .delete-comment_btn {
@@ -960,4 +959,39 @@ form.searchform::after {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+@media screen and (min-width: 992px) {
+  .events-index_each img {
+    max-width: 30vw;
+  }
+
+  .user-comment a {
+    color: #A01FCC;
+    font-size: 1.8em;
+  }
+  
+  .comment-img-user img{
+    border-radius: 50%;
+    width: 5vw;
+  }
+
+  .start_welcome {
+    font-size: 1.5em;
+  }
+  .start_img {
+    margin-top: 10px;
+    width: 25vw;
+  }
+  .start_logo {
+    width: 50vw;
+  }
+  .start_p {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    margin: none;
+  }
+  .start_welcome {
+    font-size: 3.5em;
+}
 }
