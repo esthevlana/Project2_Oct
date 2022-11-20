@@ -1,17 +1,23 @@
 <section class="profilebody">
 
-  <img src="/images/logo-branco.png" alt="" class="profile-logo">
+  <div class="index_header">
+    <img src="/images/logo-branco.png" alt="wannago logo" class="index_logo">
+    <button type="submit" class="logout-profile"><a href="/auth/logout">Logout</a></button>
+  </div>
+
+  {{!-- <img src="/images/logo-branco.png" alt="" class="profile-logo"> --}}
 
   <h1>Profile</h1>
-   <button><a href="/auth/profile-edit/{{_id}}">Edit your profile</a> </button>
 
+  <div class="profilecontainer">
   <div class="infoprofilebox">
     <div class="userinfo">
       <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
  
       <div class="username">
-        <h2>{{username}}</h2><a href="/auth/logout">Logout</a>
+        <h2>{{username}}</h2>
         <p>{{about}}</p>
+        <button class="edit-profile_btn"><a href="/auth/profile-edit/{{_id}}">Edit your profile</a> </button>
       </div>
     </div>
     <p class="coisinhacolorida">»»»»»»»»»»»»»»»»</p>
@@ -35,6 +41,7 @@
         {{/each}}
       </div>
     </div>
+  </div>
   </div>
 
   {{!-- <div class='profile-photo'>

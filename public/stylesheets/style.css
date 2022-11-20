@@ -244,6 +244,10 @@ form i:hover {
   padding-bottom: 80px;
 }
 
+#navbar-desktop {
+  visibility: hidden;
+}
+
 .index_header {
   display: flex;
   flex-direction: row;
@@ -768,6 +772,7 @@ form.searchform::after {
   background-color: #A01FCC;
   height: 100%;
   padding: 20px;
+  margin-bottom: 65px;
 }
 
 .profilebody h1 {
@@ -788,6 +793,7 @@ form.searchform::after {
 
 .imgprofile img {
   max-width: 30vw;
+  max-height: 30vh;
 }
 
 .userinfo {
@@ -805,18 +811,25 @@ form.searchform::after {
   align-content: center;
 }
 
+.userinfo img {
+border-radius: 50%;
+}
+
 .username {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  align-content: center;
-  margin-top: 10px;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+  margin: 20px 0;
 }
 
 .username h2 {
   font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.username p{
+  margin-bottom: 10px;
 }
 
 .username a {
@@ -901,6 +914,24 @@ form.searchform::after {
   padding: 10px
 }
 
+.logout-profile {
+  background-color: #C3D43C;
+  border-radius: 20px;
+  padding: 7px 30px;
+  margin: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.logout-profile:hover{
+  background-color:#d6ea3e;
+}
+.edit-profile_btn{
+  background-color: #CB236D;
+  border: none;
+  padding: 5px;
+}
+
 /* FOOTER MENU */
 
 .footermenu {
@@ -979,19 +1010,81 @@ form.searchform::after {
   .start_welcome {
     font-size: 1.5em;
   }
+
   .start_img {
     margin-top: 10px;
     width: 25vw;
   }
+
   .start_logo {
     width: 50vw;
   }
+
   .start_p {
     margin-bottom: 15px;
     margin-top: 10px;
     margin: none;
   }
+
   .start_welcome {
     font-size: 3.5em;
+  }
+
+.profile-logo {
+  width: 25vw;
+}
+
+.userinfo {
+  width: 45vw;
+  height: 20vw;
+}
+
+.imgprofile img {
+  max-width: 10vw;
+}
+
+.coisinhacolorida {
+  visibility: hidden;
+}
+
+.profilecontainer {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+  margin: none;
+}
+
+.confirmedevents {
+  width: 20vw;
+}
+.profilebody{
+  margin-bottom: 0;
+}
+#navbar-desktop{
+  visibility: visible;
+  background-color: #F0F3F6;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: center;
+}
+
+.navbar-links a{
+  color: #A01FCC;
+  font-weight: bold;
+  font-size: 2em;
+  margin-right: 15px;
+}
+
+.footermenu {
+  visibility: hidden;
+}
+.index_header{
+  visibility: hidden;
 }
 }
