@@ -197,25 +197,6 @@ router.post('/profile-edit/:id', isLoggedIn, fileUploader.single('imageUser'), a
 }
 });
 
-// GET /auth/logout
-/* router.get("/logout", isLoggedIn, (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      res.status(500).render("auth/logout", { errorMessage: err.message });
-      return;
-    }
-
-    res.redirect("/");
-  });
-}); */
-
-/* router.get('/', isLoggedIn, (req, res) => {
-  const user = req.session.user;
-  console.log(user);
-
-  res.render('index', user);
-}); */
-
 router.get('/logout', isLoggedIn, (req, res, next) => {
   /*   if (!req.session) res.redirect('/start'); */
   req.app.locals.user = null
@@ -227,14 +208,5 @@ router.get('/logout', isLoggedIn, (req, res, next) => {
     }
   });
 });
-
-/* router.post('/logout', (req, res, next) => {
-  if (!req.session) res.redirect('/');
-
-  req.session.destroy((err) => {
-    if (err) next(err);
-    else res.redirect('/');
-  });
-}); */
 
 module.exports = router;

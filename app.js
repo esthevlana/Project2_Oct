@@ -13,15 +13,14 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
-const helpers = require('handlebars-helpers')({
-  handlebars: hbs
+const helpers = require("handlebars-helpers")({
+  handlebars: hbs,
 });
 
-hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
-  return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+hbs.registerHelper("ifEquals", function (arg1, arg2, options) {
+  return arg1 == arg2 ? options.fn(this) : options.inverse(this);
 });
-hbs.registerPartials(__dirname + '/views/partials')
-
+hbs.registerPartials(__dirname + "/views/partials");
 
 const app = express();
 

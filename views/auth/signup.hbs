@@ -17,28 +17,31 @@
 
 <body>
 
+<section class="signup-section">
 
-<div class="signup-form">
-  <a href="/start"><img src="/images/logo.png" alt="" class="create-img"></a>
+<div class="form-container">
+  {{!-- <a href="/start"><img src="/images/logo.png" alt="" class="create-img"></a> --}}
+  <div class="typewriter-form">
+      <h1>WannaGo</h1>
+      <h3>New Account</h3>
+  </div>
 
-  <h3>Sign Up</h3>
-  <form action="/auth/signup" method="POST">
+  <form action="/auth/signup" method="POST" class="signup-form">
 
-    <label> Username
+    <label for="username"> Username</label>
       <input type="text" name="username" placeholder="Your username" />
-    </label>
+    
 
-    <label> Email
+    <label for="email"> Email</label>
       <input type="email" name="email" placeholder="Your email" />
-    </label>
 
-    <label> Password
+    <label for="password"> Password</label>
       <input type="password" name="password" placeholder="Your password" />
-    </label>
+    
 
-    <label> Location
+    <label for="location"> Location</label>
       <input type="text" name="location" placeholder="Your location" />
-    </label>
+    
 
     <button type="submit">Sign Up</button>
 
@@ -48,6 +51,7 @@
     {{/if}}
   </form>
 </div>
+</section>
 
 {{!-- first part - frontend: forms
 name part inside the form needs to be the same of the backend --}}

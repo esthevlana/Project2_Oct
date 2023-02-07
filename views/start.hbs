@@ -18,55 +18,31 @@
 <body>
 
 
-<section id="start">
+<section class="start-section">
 
-  <div>
+  <div class="container">
 
-    <div class="wel-logo">
-      <h3 class="start_welcome">Welcome to</h3>
-      <img src="/images/logo-branco.png" alt="" class="start_logo">
+    <div class="intro-container">
+      <h3>Welcome to</h3>
+      {{!-- <img src="/images/logo-branco.png" alt="wannago logo" class="logo"> --}}
+      <div class="typewriter">
+      <h1>WannaGo</h1>
+      </div>
+    
+      <img src="/images/start.png" alt="start page image" class="start-image">
+      <p>FIND EVENTS AND MAKE NEW FRIENDS IN A NEW CITY</p>
     </div>
 
-    <div id="start_img_btn">
-      <img src="/images/start.png" alt="" class="start_img">
-      <p class="start_p">FIND EVENTS AND MAKE NEW FRIENDS IN A NEW CITY</p>
+    <div class="button-container">
+      <a href="/auth/login"><button class="login-btn">Login</button></a>
+      <a href="/auth/signup"><button class="signup-btn">Sign up</button></a>
     </div>
-
-    <div class="startbutton">
-      <button class="startbuttonlogin"><a href="/auth/login" class="start_login-btn">Login</a></button>
-      <button class="startbuttonsignup"><a href="/auth/signup" class="start_signup-btn">Sign up</a></button>
-    </div>
-
   </div>
 
-  {{!-- <div id="login-form">
-    <h2>Log In</h2>
-    <form action="/startauth/login" method="POST">
-
-      <label> Username
-        <input type="text" name="username" placeholder="Your username" />
-      </label>
-
-      <label> Email
-        <input type="email" name="email" placeholder="Your email" />
-      </label>
-
-      <label> Password
-        <input type="password" name="password" placeholder="Your password" />
-      </label>
-
-      <button type="submit">Log In</button>
-
-      <p>New around here?</p>
-      <form action="/auth/signup" method="post">
-        <button type="submit">Sign Up</button>
-      </form>
-      --}}
 
       {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
       {{/if}}
-      {{!--
-    </form>
-  </div> --}}
+
 </section>
+</body>

@@ -16,30 +16,34 @@
 </head>
 
 <body>
-  
 
+  <section class="login-section">
 
-<div class="login-form">
-  <a href="/start"><img src="/images/logo.png" alt="" class="create-img"></a>
+    <div class="form-container">
+  {{!-- <a href="/start"><img src="/images/logo.png" alt="" class="create-img"></a> --}}
+      <div class="typewriter-form">
+        <h1>WannaGo</h1>
+        <h3>Login</h3>
+      </div>
 
-  <h3>Login</h3>
-  <form action="/auth/login" method="POST" class="login-form">
+      <form action="/auth/login" method="POST" class="login-form">
+    
+          <label for="email" class="custom-input">E-mail</label>
+            <input type="email" name="email" placeholder="Your email" id="email" />
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-      <i class="bi bi-eye-slash" id="togglePassword"></i>
-    </label>
-    <button type="submit">Login</button>
+          <label for="password" class="custom-input">Password</label>
+          {{!-- <i class="bi bi-eye-slash" id="togglePassword"></i> --}}
+            <input type="password" name="password" placeholder="Your password" id="password"/>
+      
+        <button type="submit">Login</button>
+        </div>
 
     {{#if errorMessage}}
     <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
