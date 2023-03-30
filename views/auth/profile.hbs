@@ -1,47 +1,47 @@
 <section class="profilebody">
 
-  <div class="index_header">
+  {{!-- <div class="index_header">
     <img src="/images/logo-branco.png" alt="wannago logo" class="index_logo">
     <button type="submit" class="logout-profile"><a href="/auth/logout">Logout</a></button>
-  </div>
+  </div> --}}
 
   {{!-- <img src="/images/logo-branco.png" alt="" class="profile-logo"> --}}
 
   <h1>Profile</h1>
 
   <div class="profilecontainer">
-  <div class="infoprofilebox">
-    <div class="userinfo">
-      <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
- 
-      <div class="username">
-        <h2>{{username}}</h2>
-        <p>{{about}}</p>
-        <button class="edit-profile_btn"><a href="/auth/profile-edit/{{_id}}">Edit your profile</a> </button>
-      </div>
-    </div>
-    <p class="coisinhacolorida">»»»»»»»»»»»»»»»»</p>
-  </div>
+    <div class="infoprofilebox">
+      <div class="userinfo">
+        <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
 
-  <div class="favconfevents">
-    <div class="squareevents">
-      <h3>Confirmed Events</h3>
-      <div class="confirmedevents">
-        <br />
-        {{#each confirmedEvents}}
-        <div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
-        {{/each}}
+        <div class="username">
+          <h2>{{username}}</h2>
+          <p>{{about}}</p>
+          <button class="edit-profile_btn"><a href="/auth/profile-edit/{{_id}}">Edit your profile</a> </button>
+        </div>
+      </div>
+      <p class="coisinhacolorida">»»»»»»»»»»»»»»»»</p>
+    </div>
+
+    <div class="favconfevents">
+      <div class="squareevents">
+        <h3>Confirmed Events</h3>
+        <div class="confirmedevents">
+          <br />
+          {{#each confirmedEvents}}
+          <div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="favconfevets2">
+        <h3>Favourite Events</h3>
+        <div class="favouriteevents">
+          {{#each favouriteEvents}}
+          <div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
+          {{/each}}
+        </div>
       </div>
     </div>
-    <div class="favconfevets2">
-      <h3>Favourite Events</h3>
-      <div class="favouriteevents">
-        {{#each favouriteEvents}}
-        <div class="eventslist"><a href='/event-details/{{_id}}'>{{title}}</a></div>
-        {{/each}}
-      </div>
-    </div>
-  </div>
   </div>
 
   {{!-- <div class='profile-photo'>

@@ -435,23 +435,23 @@ input:not(:placeholder-shown) {
   font-size: 1.5rem;
   margin-left: 1.1rem;
   margin-bottom: 0.5rem;
-  color: #423839;
-  font-family: Arial, Helvetica, sans-serif
+  color: #A01FCC;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
 }
 
 #videoPlayer {
   position: relative;
   width: 100vw;
   height: 100vh;
-  z-index: 10;
+  z-index: 5;
   border: none;
   outline: none;
   color: transparent;
+  margin-top: -30px;
 }
 
-.searchform-container {
-  padding-top: 5rem;
-}
+.searchform-container {}
 
 .searchform {
   display: flex;
@@ -1223,5 +1223,22 @@ footer .bi {
     margin-bottom: 0;
   }
 
+  #videoPlayer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    border: none;
+    outline: none;
+    color: transparent;
+    padding-top: -15px;
+  }
 
+}
+
+@media screen and (max-width: 992px) {
+  #videoPlayer {
+    display: none;
+  }
+  
 }
