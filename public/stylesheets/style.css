@@ -60,14 +60,13 @@ body {
   justify-content: center;
   align-content: center;
   text-align: center;
-  width: 50rem;
   margin: auto;
   max-width: 100%;
   height: auto;
 }
 
 .intro-container .start-image {
-  width: 30rem;
+  width: 20rem;
   margin: auto;
   max-width: 100%;
   height: auto;
@@ -330,7 +329,7 @@ input:not(:placeholder-shown) {
 }
 
 .nav-elements-container img {
-  width: 55%;
+  width: 70%;
   max-width: 100%;
   display: flex;
   flex-direction: row;
@@ -339,16 +338,19 @@ input:not(:placeholder-shown) {
 
 .navbar-links {
   width: 100%;
+  font-family: monospace;
+  font-weight: 600;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .navbar-links a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #A01FCC;
   text-decoration: none;
   transition: transform .3s;
+
 }
 
 .navbar-links a:hover {
@@ -363,11 +365,10 @@ input:not(:placeholder-shown) {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 2rem;
 }
 
 .i-header-mobile img {
-  width: 20%;
+  width: 30%;
 }
 
 @media screen and (min-width:450px) {
@@ -451,8 +452,6 @@ input:not(:placeholder-shown) {
   margin-top: -30px;
 }
 
-.searchform-container {}
-
 .searchform {
   display: flex;
   flex-direction: row;
@@ -496,7 +495,7 @@ form.searchform button {
   border-left: none;
   cursor: pointer;
   position: absolute;
-  margin-bottom: 6.5vh;
+  margin-bottom: 6.8vh;
 }
 
 form.searchform button:hover {
@@ -892,6 +891,10 @@ form.searchform::after {
 #create-event {
   background-color: #EFEFEF;
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .create_title {
@@ -899,6 +902,16 @@ form.searchform::after {
   color: #423839;
   width: 80vw;
 }
+
+.category {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 
 .create-img {
   max-width: 100vw;
@@ -926,15 +939,15 @@ form.searchform::after {
 .profilebody {
   background-color: #A01FCC;
   height: 100%;
-  padding: 20px;
+  width: 100%;
   margin-bottom: 65px;
+  display: flex;
+  align-items: center;
 }
 
 .profilebody h1 {
   font-size: 2.5em;
   color: #d9ed42;
-  margin-left: 20px;
-  padding-top: 20px;
 }
 
 .profilebody h2 {
@@ -1149,6 +1162,26 @@ footer .bi {
   flex-wrap: wrap;
 }
 
+/* ERROR PAGE */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container h1,
+h2 {
+  color: #A01FCC;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.error-container img {
+  width: 20vw;
+}
 
 @media screen and (min-width: 992px) {
   .events-index_each img {
@@ -1234,11 +1267,76 @@ footer .bi {
     padding-top: -15px;
   }
 
+  .nav-elements-container {
+    background-color: #f0f3f6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .nav-elements-container img {
+    width: 55%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .navbar-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .navbar-links a {
+    font-size: 2rem;
+    color: #A01FCC;
+    text-decoration: none;
+    transition: transform .3s;
+  }
+
+  .navbar-links a:hover {
+    transform: scale(1.1);
+    color: #C3D43C;
+  }
+
+  form.searchform button {
+    width: 5rem;
+    background: rgba(128, 128, 128, 0.226);
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 50%;
+    border-left: none;
+    cursor: pointer;
+    position: absolute;
+    margin-bottom: 6.8vh;
+  }
+
+
 }
 
 @media screen and (max-width: 992px) {
   #videoPlayer {
     display: none;
   }
-  
+
+  .nav-elements-container {
+    display: none;
+  }
+
+  form.searchform button {
+    margin-bottom: 5vh;
+  }
+
+  .search-container {
+    margin: 0;
+  }
+
+  .index_h2 {
+    padding-left: 5px;
+  }
+
 }

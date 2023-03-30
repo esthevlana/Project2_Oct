@@ -7,14 +7,16 @@
 
   {{!-- <img src="/images/logo-branco.png" alt="" class="profile-logo"> --}}
 
-  <h1>Profile</h1>
 
   <div class="profilecontainer">
+
     <div class="infoprofilebox">
       <div class="userinfo">
         <div class="imgprofile"><img src="{{imageUser}}" alt="profilephoto"></div>
 
         <div class="username">
+          <h1>My Profile</h1>
+
           <h2>{{username}}</h2>
           <p>{{about}}</p>
           <button class="edit-profile_btn"><a href="/auth/profile-edit/{{_id}}">Edit your profile</a> </button>
