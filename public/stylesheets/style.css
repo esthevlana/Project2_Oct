@@ -143,6 +143,7 @@ a .signup-btn {
   border: 2px solid #C3D43C;
   border-radius: 0.5em;
   transition: 0.3s ease background;
+  cursor: pointer;
 }
 
 .login-btn a:hover,
@@ -1258,7 +1259,7 @@ h2 {
 
   #videoPlayer {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 10;
     border: none;
